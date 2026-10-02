@@ -10,6 +10,7 @@ export const ui = {
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
     hero: {
+      eyebrow: 'NC · CA · AZ · TX — Español e inglés',
       title: '¿Tienes preguntas sobre tu caso de inmigración?',
       subtitle: 'Hablamos tu idioma y luchamos por tu familia',
       para: 'Somos un despacho de inmigración en Carolina del Norte, California, Arizona y Texas. Te explicamos tus opciones para visas, green card, ciudadanía y defensa, con trato cercano y pasos claros.',
@@ -84,6 +85,7 @@ export const ui = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     hero: {
+      eyebrow: 'NC · CA · AZ · TX — Spanish and English',
       title: 'Questions about your immigration case?',
       subtitle: 'We speak your language and fight for your family',
       para: 'We are an immigration law firm in North Carolina, California, Arizona, and Texas. We explain your options for visas, green cards, citizenship, and defense — with personal attention and clear steps.',

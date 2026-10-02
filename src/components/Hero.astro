@@ -9,33 +9,35 @@ interface Props {
 }
 const { lang = 'es' } = Astro.props;
 const t = ui[lang].hero;
+const callNow = ui[lang].callNow;
 ---
 <section id="inicio" class="relative bg-counsel-navy overflow-hidden h-screen">
-  <div data-hero-media aria-hidden="true" class="absolute inset-0 overflow-hidden">
+  <div data-hero-media aria-hidden="true" class="absolute inset-0 h-full overflow-hidden lg:left-[36%] hidden md:block">
     <Image
       src={heroImg}
       alt=""
       data-hero-bg
       widths={[768, 1024, 1440]}
-      sizes="100vw"
+      sizes="(min-width: 1024px) 64vw, 100vw"
       loading="eager"
       fetchpriority="high"
       decoding="async"
-      class="h-full md:w-[110%] md:scale-90 md:h-auto object-cover object-center will-change-transform "
+      class="h-full w-full object-cover object-center will-change-transform absolute -bottom-20"
     />
   </div>
   <div aria-hidden="true" class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,97,0.88) 0%, rgba(31,52,97,0.78) 100%)"></div>
-  <div data-hero-parallax class="relative mx-auto max-w-[900px] px-6 gap-y-5 py-16 md:py-24 text-center min-h-[440px] lg:min-h-[520px] flex flex-col items-center justify-center">
+  <div data-hero-parallax class="relative mx-auto max-w-[900px] lg:max-w-[1200px] px-6 gap-y-5 py-16 md:py-24 text-center lg:text-left min-h-[440px] lg:min-h-[520px] h-full flex flex-col items-center lg:items-start justify-center">
+    <p data-hero class="font-body text-[13px] font-bold uppercase tracking-[0.08em] leading-[1.2] text-verdict-gold">{t.eyebrow}</p>
     <h1 data-hero class="font-heading font-bold text-paper text-[32px] leading-[1.1] md:text-[40px] lg:text-[56px] max-w-[20ch]">
       {t.title}
     </h1>
     <p data-hero class="font-heading font-medium text-paper text-[20px] md:text-[24px] mt-4">{t.subtitle}</p>
-    <div data-hero aria-hidden="true" class="mx-auto h-[3px] w-24 bg-verdict-gold"></div>
-    <p data-hero class="font-body text-[16px] leading-[1.6] text-paper mt-6 max-w-[760px]">
+    <p data-hero class="font-body text-[16px] leading-[1.6] text-paper mt-6 max-w-[760px] lg:max-w-[600px]">
       {t.para}
     </p>
-    <div data-hero class="mt-8">
+    <div data-hero class="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
       <Button href="#cita">{t.cta}</Button>
+      <Button variant="secondary-dark" href="tel:+19195550100">{callNow}</Button>
     </div>
     <p data-hero class="font-body text-[13px] text-paper/80 mt-4">{t.note}</p>
   </div>
