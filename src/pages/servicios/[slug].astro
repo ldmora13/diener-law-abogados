@@ -4,7 +4,6 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Button from '../../components/Button.astro';
 import IconCircle from '../../components/IconCircle.astro';
-import AppointmentForm from '../../components/AppointmentForm.tsx';
 import { detalleServicios } from '../../data/detalle-servicios.ts';
 import { faqSchema, breadcrumbSchema } from '../../data/schemas.ts';
 
@@ -45,7 +44,7 @@ if (!servicio) throw new Error(`Servicio no encontrado: ${slug}`);
       <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">Consulta gratuita · Español e inglés</p>
       <h1 class="font-heading font-bold text-[32px] md:text-[40px] text-paper mt-3">{servicio.titulo}</h1>
       <p class="font-body text-[16px] leading-[1.6] text-paper mx-auto max-w-[760px] mt-4">{servicio.resumen}</p>
-      <div class="mt-8"><Button href="#cita-servicio">Agenda tu consulta</Button></div>
+      <div class="mt-8"><Button openCita>Agenda tu consulta</Button></div>
     </div>
   </section>
 
@@ -120,20 +119,10 @@ if (!servicio) throw new Error(`Servicio no encontrado: ${slug}`);
       <div data-reveal class="bg-parchment border border-mist rounded-[4px] p-8 mt-12 text-center">
         <h2 class="font-heading text-[24px] text-authority-blue">¿Es este tu caso? Hablemos.</h2>
         <p class="font-body text-[16px] mt-2">Consulta confidencial en español. Sin compromiso.</p>
-        <div class="mt-6"><Button href="#cita-servicio">Solicitar consulta</Button></div>
+        <div class="mt-6"><Button openCita>Solicitar consulta</Button></div>
         <p class="font-body text-[13px] text-quiet-slate mt-4">Publicidad de abogados. Los resultados varían según cada caso.</p>
       </div>
     </div>
   </div>
-
-  {/* Formulario final */}
-  <section id="cita-servicio" class="bg-justice-blue scroll-mt-20">
-    <div class="mx-auto max-w-[760px] px-6 py-16">
-      <h2 class="font-heading font-semibold text-[30px] text-paper text-center">Agenda tu consulta de {servicio.titulo.toLowerCase()}</h2>
-      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10 mt-8">
-        <AppointmentForm client:visible />
-      </div>
-    </div>
-  </section>
 
 </Layout>

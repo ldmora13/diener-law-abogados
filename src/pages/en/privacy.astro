@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { ui } from '../../data/i18n.ts';
+
+const t = ui.en.privacy;
+---
+
+<Layout
+  lang="en"
+  title={t.seoTitle}
+  description={t.seoDesc}
+  path="/en/privacy"
+  altEs="/privacidad"
+  altEn="/en/privacy"
+>
+  <Header slot="header" lang="en" base="/en" switchHref="/privacidad" />
+  <Footer slot="footer" lang="en" serviceBase="/en/services" />
+
+  <section class="bg-counsel-navy">
+    <div data-hero-parallax class="mx-auto max-w-[1200px] px-6 py-16 text-center">
+      <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">{t.heroEyebrow}</p>
+      <h1 class="font-heading font-bold text-[32px] md:text-[40px] text-paper mt-3">{t.heroTitle}</h1>
+      <p class="font-body text-[16px] leading-[1.6] text-paper mx-auto max-w-[760px] mt-4">{t.heroSub}</p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-[1200px] px-6 py-16">
+    <nav aria-label="Breadcrumbs" class="mb-6 font-body text-[14px] text-quiet-slate">
+      <a href="/en/" class="underline underline-offset-4">{t.crumbHome}</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-authority-blue font-semibold">{t.crumbHere}</span>
+    </nav>
+    <div class="max-w-[760px]">
+      <p data-reveal class="font-body text-[13px] text-quiet-slate">{t.updated}</p>
+      {t.sections.map((s) => (
+        <section data-reveal class="mt-10">
+          <h2 class="font-heading font-semibold text-[30px] text-authority-blue scroll-mt-28">{s.h}</h2>
+          {s.p.map((p) => (<p class="font-body text-[16px] leading-[1.6] mt-4">{p}</p>))}
+        </section>
+      ))}
+    </div>
+  </div>
+</Layout>

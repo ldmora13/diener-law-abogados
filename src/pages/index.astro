@@ -13,7 +13,6 @@ import ProcessTimeline from '../components/ProcessTimeline.astro';
 import Testimonial from '../components/Testimonial.astro';
 import CaseCard from '../components/CaseCard.astro';
 import FaqAccordion from '../components/FaqAccordion.tsx';
-import AppointmentForm from '../components/AppointmentForm.tsx';
 import { servicios } from '../data/servicios.ts';
 import { abogados } from '../data/abogados.ts';
 import { faqs } from '../data/faq.ts';
@@ -47,10 +46,10 @@ import certificate from '../assets/logos/bcslogo2.png'
     <div class="mx-auto max-w-[1200px] px-6 py-24 lg:py-[120px] grid gap-10 lg:grid-cols-2 items-center">
       <div>
         <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">Por qué Diener Law</p>
-        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">Abogados Certificados de Derecho Migratorio en Carolina del Norte, California y Arizona</h2>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">Abogados Certificados de Derecho Migratorio en Carolina del Norte, California, Arizona y Texas</h2>
         <p class="font-heading text-[24px] text-verdict-gold mt-4">Cercanos, claros y de tu lado</p>
         <p class="font-body text-[16px] leading-[1.6] text-paper mt-4 max-w-[60ch]">Te explicamos cada formulario y cada plazo en español, sin tecnicismos. Preparamos tu caso con listas claras y te acompañamos a cada cita y entrevista.</p>
-        <div class="mt-8"><Button variant="secondary-dark" href="#cita">Conoce nuestro proceso</Button></div>
+        <div class="mt-8"><Button variant="secondary-dark" openCita>Conoce nuestro proceso</Button></div>
       </div>
       <div class="relative flex justify-center">
         <div class="panel-media-diagonal">
@@ -81,7 +80,7 @@ import certificate from '../assets/logos/bcslogo2.png'
     <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
       <SectionHeading eyebrow="Paso a paso" title="Tu proceso migratorio, claro desde el inicio" />
       <ProcessTimeline />
-      <div class="text-center mt-10"><Button href="#cita">Comienza tu evaluación gratuita</Button></div>
+      <div class="text-center mt-10"><Button openCita>Comienza tu evaluación gratuita</Button></div>
     </div>
   </section>
 
@@ -123,20 +122,25 @@ import certificate from '../assets/logos/bcslogo2.png'
     </div>
   </section>
 
-  {/* 10. Cita */}
-  <section id="cita" class="bg-justice-blue">
-    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+  {/* 10. Contacto directo */}
+  <section id="contacto" class="bg-justice-blue">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24 grid gap-10 lg:grid-cols-2 items-center">
       <div>
         <h2 class="font-heading font-semibold text-[30px] lg:text-[40px] text-paper">Habla con un abogado de inmigración</h2>
         <p class="font-body text-[20px] font-semibold text-paper mt-3">Consulta confidencial. Respondemos en 1 día hábil.</p>
         <ul class="mt-6 space-y-3 font-body text-[16px] text-paper">
-          <li><a href="tel:+19195550100" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">📞 (919) 555-0100</a></li>
+          <li><a href="tel:+19195550100" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">📞 (888) 574-1286</a></li>
           <li>Lun–Vie 9:00–18:00 · Español e inglés</li>
           <li>NC · CA · AZ</li>
         </ul>
       </div>
-      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10">
-        <AppointmentForm client:visible />
+      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10 text-center">
+        <p class="font-heading font-semibold text-[24px] text-authority-blue">Agenda tu consulta</p>
+        <p class="font-body text-[16px] mt-2">Cuéntanos tu caso en 2 minutos. Sin compromiso.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+          <Button openCita>Agendar consulta</Button>
+          <Button variant="secondary" href="tel:+19195550100">Llamar ahora</Button>
+        </div>
       </div>
     </div>
   </section>

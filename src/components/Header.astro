@@ -6,14 +6,14 @@ interface Props {
   base?: string;
   switchHref?: string;
 }
-const { lang = 'es', base = '', switchHref = '/en' } = Astro.props;
+const { lang = 'es', base = '/', switchHref = '/en' } = Astro.props;
 const t = ui[lang];
 const nav = [
   { href: `${base}#inicio`, label: t.nav.home },
   { href: `${base}#servicios`, label: t.nav.immigration },
   { href: `${base}#por-que`, label: t.nav.why },
   { href: `${base}#proceso`, label: t.nav.learn },
-  { href: `${base}#cita`, label: t.nav.contact },
+  { href: `${base}#cita`, label: t.nav.contact, modal: true },
   { href: `${base}/about-us`, label: t.nav.about }
 ];
 const toggleLabel = lang === 'es' ? 'EN' : 'ES';
@@ -27,6 +27,7 @@ const toggleLabel = lang === 'es' ? 'EN' : 'ES';
       {nav.map((item, i) => (
         <a
           href={item.href}
+          data-open-cita={'modal' in item && item.modal ? '' : undefined}
           aria-current={i === 0 ? 'page' : undefined}
           class={`font-body text-[13px] font-semibold text-paper min-h-[44px] inline-flex items-center border-b-[3px] ${i === 0 ? 'border-verdict-gold' : 'border-transparent hover:border-paper/40'}`}
         >

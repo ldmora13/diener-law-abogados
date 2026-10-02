@@ -58,7 +58,7 @@ const fotos: Record<string, ImageMetadata> = {
       <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">{t.heroEyebrow}</p>
       <h1 class="font-heading font-bold text-[32px] md:text-[40px] text-paper mt-3">{t.heroTitle}</h1>
       <p class="font-body text-[16px] leading-[1.6] text-paper mx-auto max-w-[760px] mt-4">{t.heroSub}</p>
-      <div class="mt-8"><Button href="/#cita">{t.heroCta}</Button></div>
+      <div class="mt-8"><Button openCita>{t.heroCta}</Button></div>
     </div>
   </section>
 
@@ -99,7 +99,7 @@ const fotos: Record<string, ImageMetadata> = {
       <h2 data-reveal class="font-heading font-semibold text-[30px] text-paper">{t.ctaTitle}</h2>
       <p data-reveal class="font-body text-[16px] text-paper mt-3">{t.ctaSub}</p>
       <div data-reveal class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <Button href="/#cita">{t.ctaBtn}</Button>
+        <Button openCita>{t.ctaBtn}</Button>
         <Button variant="secondary-dark" href="tel:+19195550100">{callNow}</Button>
       </div>
     </div>

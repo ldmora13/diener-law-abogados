@@ -114,13 +114,20 @@ export const ui = {
       services: 'Servicios', offices: 'Oficinas', contact: 'Contacto',
       contactText: 'Atención en español e inglés.',
       schedule: 'Agendar consulta',
+      privacyLink: 'Política de privacidad',
       legal: 'Publicidad de abogados. Los resultados anteriores no garantizan un resultado similar. Enviar este formulario no crea una relación abogado-cliente.',
       callTab: 'Llamar', consultTab: 'Consulta',
     },
     form: {
-      name: 'Nombre completo', phone: 'Teléfono', email: 'Correo electrónico', state: 'Estado de interés', case: 'Tipo de caso',
+      modalEyebrow: 'Consulta confidencial', modalTitle: 'Agenda tu consulta', modalSub: 'Completa tus datos y un abogado se pondrá en contacto contigo en 1 día hábil.', close: 'Cerrar modal',
+      noscript: 'Para agendar tu consulta, llámanos al',
+      name: 'Nombre(s)', lastName: 'Apellidos', phone: 'Teléfono', email: 'Correo electrónico', state: 'Estado de interés', case: 'Tipo de caso',
+      status: 'Situación migratoria actual', urgency: '¿Hay algo urgente en tu caso?',
+      statusOpts: ['Ciudadano estadounidense', 'Residente permanente', 'Visa vigente', 'Otro estatus', 'Prefiero no decirlo'],
+      urgencyOpts: ['Sin prisa', 'Audiencia o cita próxima', 'Detención o emergencia'],
+      urgencyHelp: 'En caso de detención o emergencia, llama de inmediato al',
       contactPref: 'Preferencia de contacto', language: 'Idioma preferido', message: 'Cuéntanos tu caso',
-      namePh: 'Ana García', phonePh: '(919) 555-0100', emailPh: 'ana@correo.com', messagePh: 'Ej.: Soy residente y quiero pedir a mi esposo…',
+      namePh: 'Ana', lastNamePh: 'García López', phonePh: '(888) 574-1286', emailPh: 'ana@correo.com', messagePh: 'Ej.: Soy residente y quiero pedir a mi esposo…',
       selectOne: 'Selecciona…',
       states: [['NC', 'Carolina del Norte'], ['CA', 'California'], ['AZ', 'Arizona'], ['TX', 'Texas']] as [string, string][],
       cases: [['familiar', 'Visa familiar / K-1'], ['trabajo', 'Visa de trabajo'], ['estudiante', 'Visa de estudiante'], ['ciudadania', 'Ciudadanía / Green Card'], ['deportacion', 'Defensa de deportación / Asilo']] as [string, string][],
@@ -131,8 +138,8 @@ export const ui = {
       noRelation: 'Enviar este formulario no crea una relación abogado-cliente.',
       successTitle: 'Gracias. Un abogado se pondrá en contacto contigo pronto.',
       successSub: 'Respondemos en 1 día hábil. Revisa tu teléfono y correo.',
-      errName: 'Escribe tu nombre completo.', errPhone: 'Escribe un teléfono válido.', errEmail: 'Escribe un correo válido.',
-      errState: 'Elige un estado.', errCase: 'Elige el tipo de caso.', errConsent: 'Debes aceptar ser contactado.',
+      errName: 'Escribe tu nombre.', errLastName: 'Escribe tus apellidos.', errPhone: 'Escribe un teléfono válido.', errEmail: 'Escribe un correo válido.',
+      errState: 'Elige un estado.', errCase: 'Elige el tipo de caso.', errStatus: 'Elige tu situación actual.', errUrgency: 'Elige una opción.', errConsent: 'Debes aceptar ser contactado.',
     },
     service: {
       freeConsult: 'Consulta gratuita · Español e inglés', soon: 'En breve',
@@ -143,6 +150,53 @@ export const ui = {
       ctaTitle: '¿Es este tu caso? Hablemos.', ctaSub: 'Consulta confidencial en español. Sin compromiso.',
       ctaBtn: 'Solicitar consulta', legal: 'Publicidad de abogados. Los resultados varían según cada caso.',
       formPrefix: 'Agenda tu consulta de ', formSuffix: '',
+    },
+    privacy: {
+      seoTitle: 'Política de privacidad — Diener Law Abogados',
+      seoDesc: 'Cómo Diener Law recopila, usa y protege tu información personal en este sitio web.',
+      crumbHome: 'Inicio', crumbHere: 'Política de privacidad',
+      heroEyebrow: 'Aviso legal',
+      heroTitle: 'Política de privacidad',
+      heroSub: 'Tu privacidad es importante para nosotros. Este aviso explica nuestras prácticas de información en línea.',
+      updated: 'Última actualización: octubre de 2026',
+      sections: [
+        {
+          h: 'Tu privacidad',
+          p: ['Tu privacidad es importante para nosotros. Para protegerla mejor, publicamos este aviso que explica nuestras prácticas de información en línea y las opciones que tienes sobre la forma en que se recopila y utiliza tu información. Al usar nuestro sitio web de una manera que implique proporcionarnos información personal, aceptas estas políticas.'],
+        },
+        {
+          h: 'Ley estatal y derechos adicionales',
+          p: ['Ten en cuenta que puedes tener derechos adicionales derivados de las leyes del estado donde vives. Estos derechos estatales pueden ampliar, reforzar o complementar de algún modo los derechos de privacidad que ya tienes por naturaleza o bajo la ley federal. Nuestra política es cumplir plenamente con las normas de privacidad de cada jurisdicción en la que operamos. Por ello, puedes usar nuestra información de contacto para comunicarte con nosotros en cualquier momento y ejercer tus derechos estatales.'],
+        },
+        {
+          h: 'Nuestro compromiso con la privacidad de los menores',
+          p: ['Proteger la privacidad de los más jóvenes es especialmente importante. Por esa razón, nuestro sitio web nunca recopilará ni mantendrá información de quienes sepamos que tienen menos de 18 años, y ninguna parte del sitio está diseñada para atraer a menores de 18 años.', 'Bajo nuestros Términos de Servicio y Condiciones de Uso, los menores de 18 años no pueden usar nuestro sitio web ni acceder a nuestros servicios. No es nuestra intención ofrecer productos o servicios a menores.'],
+        },
+        {
+          h: 'Recopilación de información personal',
+          p: ['Al visitar nuestro sitio web, es posible que se registre la dirección IP utilizada para acceder, junto con las fechas y horas de acceso. Esta información se usa únicamente para analizar tendencias, administrar el sitio, rastrear el movimiento de los usuarios y recopilar información demográfica general para uso interno, como evaluaciones estadísticas y mejora del sitio. Lo más importante: ninguna dirección IP registrada está vinculada a información de identificación personal.', 'También puede recopilarse otra información, como es habitual en la mayoría de los sitios web. Por ejemplo, generalmente se conoce la fuente que te refirió a nuestro sitio. Asimismo, pueden rastrearse tu duración en el sitio y tu destino al salir. Otros datos comunes incluyen el tipo de sistema operativo del equipo que usas para acceder y el tipo de navegador web. Esta recopilación es común y ayuda a ofrecer una mejor experiencia al usuario.', 'Las cookies son otra práctica común en internet y un medio clave para mejorar la experiencia, ya que nos permiten personalizar tu uso del sitio. Se transfiere información básica a tu equipo para que el contenido y la experiencia reflejen tus acciones, preferencias, etc. Puedes asumir que nuestro sitio usa cookies, y eres libre de ajustar tu navegador para desactivarlas o recibir avisos sobre ellas. Ten en cuenta que rechazar las cookies puede limitar algunas funciones del sitio.', 'En ocasiones tendrás pleno conocimiento de la información recibida, pues eres tú quien la proporciona directamente. Por ejemplo, al solicitar una consulta completas un formulario con tu nombre, teléfono, correo electrónico, estado de interés, tipo de caso y mensaje. Negarte a proporcionar parte de esta información puede impedirnos brindarte los servicios solicitados.'],
+        },
+        {
+          h: 'Manejo de la información personal',
+          p: ['Ten en cuenta que cualquier información personal que proporciones a terceros distintos de nosotros o nuestros proveedores es totalmente opcional y queda fuera de nuestro control, quedando sujeta a la política de esa parte.', 'Nuestra intención principal al recopilar tu información personal y privada es simplemente llevar a cabo nuestro trabajo y servirte mejor. No compartimos tu información personal con otras partes ni intereses externos salvo que nos hayas autorizado a hacerlo. Existen casos en que tu información se almacena con proveedores de servicios externos, limitados en el uso que pueden darle y sin poder venderla ni transferirla.', 'Sin embargo, esta información agregada, como conjunto y no de forma individual, puede usarse para entender a nuestra base de usuarios en general o compartirse con terceros a nuestra entera discreción.', 'Aunque defendemos firmemente la privacidad, hay ocasiones en que la ley puede obligarnos a compartir tu información, como ante actividades ilegales u otras acusaciones graves que generen responsabilidad legal, o para proteger nuestros propios intereses, por ejemplo ante una presunta infracción de derechos de autor u otros derechos de propiedad intelectual.'],
+        },
+        {
+          h: 'Google AdSense y la cookie DART de DoubleClick',
+          p: ['Google, como proveedor externo de publicidad, puede usar cookies para publicar anuncios en este sitio. El uso de cookies DART permite mostrar anuncios basados en tus visitas a este sitio y a otros sitios de internet.', 'Para inhabilitar las cookies DART puedes visitar la política de privacidad de la red de anuncios y contenido de Google en http://www.google.com/privacy_ads.html. El rastreo mediante cookies DART está sujeto a las propias políticas de privacidad de Google.', 'Otros servidores o redes de anuncios externos también pueden usar cookies para medir la efectividad de la publicidad; nuestro sitio no tiene acceso ni control sobre esas cookies, las cuales se rigen por sus propias políticas. Puedes inhabilitar algunas, aunque probablemente no todas, en http://ww.networkadvertising.org/managing/opt_out.asp.'],
+        },
+        {
+          h: 'Enlaces a sitios web de terceros',
+          p: ['Hemos incluido enlaces en este sitio para tu uso y referencia. No somos responsables de las políticas de privacidad de esos sitios, las cuales pueden diferir de la nuestra.'],
+        },
+        {
+          h: 'Aviso de cambios',
+          p: ['Como ocurre con cualquiera de nuestras páginas administrativas y legales, el contenido de esta página puede cambiar con el tiempo y podría ser distinto en tu próxima visita. Estos cambios se realizan para protegerte a ti y a nuestro sitio. Si esta página es importante para ti, revísala con frecuencia, ya que no se dará ningún otro aviso antes ni después de que el cambio surta efecto.'],
+        },
+        {
+          h: 'Preguntas, comentarios e inquietudes',
+          p: ['Si tienes alguna pregunta sobre el contenido de esta página, o simplemente deseas comunicarte con nosotros por cualquier otro motivo, puedes llamarnos al (919) 555-0100.'],
+        },
+      ],
     },
   },
   en: {
@@ -191,13 +245,13 @@ export const ui = {
       abogados: [
         {
           nombre: 'Richard “Bert” Diener', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-          bio: ['If, as some seem to think, our profession is a constant battle, Bert comes to it particularly well prepared. He served four years in the United States Marine Corps, with tours including Guantánamo Bay (Cuba), Okinawa (Japan), and Camp Lejeune (North Carolina). While earning his law degree at the University of North Carolina at Chapel Hill, he was selected for UNC’s national mock trial team. Both he and fellow attorney Russell Johnson were trial-team teammates in law school and, more than a decade later, have joined forces to fight for the underrepresented. Bert has proven willing to go beyond the call of duty in his efforts to help others. Speaking about his work, he often quotes Texas lawyer Joe Jamail: “if you are not emotionally involved, your client is not getting your best effort”.'],
+          bio: ['Bert served for four years in the United States Marine Corps, with postings in Guantanamo Bay (Cuba), Okinawa (Japan), and Camp Lejeune. While earning his law degree at the University of North Carolina at Chapel Hill, he was selected for the UNC national mock trial team. Bert has demonstrated a willingness to go above and beyond the call of duty in his efforts to help others.'],
           credenciales: ['U.S. Marine Corps veteran (4 years)', 'UNC Chapel Hill — School of Law', 'UNC national mock trial team'],
           cita: 'We are dedicated to helping immigrants resolve their legal problems',
         },
         {
           nombre: 'Elaine Hartman', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-          bio: ['Originally from Ohio, Elaine has lived in North Carolina for more than a decade. While attending the University of North Carolina at Chapel Hill, she was inspired by an acquaintance’s immigration story and decided to attend Carolina Law. She served as a comments editor on the North Carolina Review and took part in the Immigration Clinic. When she is not working as an immigration attorney at Diener Law, she enjoys spending time with friends and family and going shopping.'],
+          bio: ['Originally from Ohio, Elaine has lived in North Carolina for over a decade. While attending the University of North Carolina at Chapel Hill, she was inspired by an acquaintance’s immigration story and decided to attend Carolina Law. She served as a commentary editor for the *North Carolina Review* and participated in the Immigration Clinic. When she is not working as an immigration attorney at Diener Law, she enjoys spending time with friends and family and shopping.'],
           credenciales: ['UNC Chapel Hill — Carolina Law', 'North Carolina Review comments editor', 'Immigration Clinic'],
           cita: 'Proudly serving immigrants from North Carolina to California',
         },
@@ -211,10 +265,10 @@ export const ui = {
           nombre: 'Italia Lima', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
           bio: [
             'Italia Lima has spent her entire legal career handling matters exclusively in U.S. Immigration and Nationality Law. She attended the University of California-Davis as a pre-law student, graduating on the Dean’s List in 2008 with a Bachelor of Arts. She earned her Juris Doctor from the University of Illinois, Chicago in 2015. During law school, she clerked for the Honorable Judge Elizabeth Loredo (retired). She also helped launch her law school’s first immigration clinic and served as president of the Latino Law Student Association.',
-            'Her experience includes representing clients in family-based immigration matters, asylees and refugees, naturalization, and consular immigration. She has litigated both detained and non-detained cases in immigration courts. She has also handled more complex immigration cases, including motions to reopen and reconsider, appeals before the BIA, and petitions for review in the Ninth Circuit Court of Appeals.',
+            'Her experience includes representing clients in family-based immigration matters, asylees and refugees, naturalization, and consular immigration.',
             'She has been selected as a Super Lawyers Rising Star for four consecutive years (2022–2025), an honor awarded to the top 2.5% of immigration attorneys in Southern California. She is the proud daughter of Mexican immigrants and the first in her family to attend college and law school in the United States.',
           ],
-          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., University of Illinois Chicago', 'B.A., UC Davis (Dean’s List 2008)'],
+          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., University of Illinois Chicago'],
         },
         {
           nombre: 'Kathleen Moscato', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -258,13 +312,20 @@ export const ui = {
       services: 'Services', offices: 'Offices', contact: 'Contact',
       contactText: 'Se habla español. Service in Spanish and English.',
       schedule: 'Schedule a consultation',
+      privacyLink: 'Privacy policy',
       legal: 'Attorney advertising. Prior results do not guarantee a similar outcome. Submitting this form does not create an attorney-client relationship.',
       callTab: 'Call', consultTab: 'Consult',
     },
     form: {
-      name: 'Full name', phone: 'Phone', email: 'Email', state: 'State of interest', case: 'Case type',
+      modalEyebrow: 'Confidential consultation', modalTitle: 'Schedule your consultation', modalSub: 'Share your details and an attorney will contact you within 1 business day.', close: 'Close dialog',
+      noscript: 'To schedule your consultation, call us at',
+      name: 'First name', lastName: 'Last name', phone: 'Phone', email: 'Email', state: 'State of interest', case: 'Case type',
+      status: 'Current immigration status', urgency: 'Is anything urgent in your case?',
+      statusOpts: ['U.S. citizen', 'Permanent resident', 'Valid visa', 'Other status', 'Prefer not to say'],
+      urgencyOpts: ['No rush', 'Upcoming hearing or appointment', 'Detention or emergency'],
+      urgencyHelp: 'If detained or in an emergency, call us immediately at',
       contactPref: 'Preferred contact method', language: 'Preferred language', message: 'Tell us about your case',
-      namePh: 'Jane Garcia', phonePh: '(919) 555-0100', emailPh: 'jane@email.com', messagePh: 'E.g.: I am a resident and want to petition for my husband…',
+      namePh: 'Jane', lastNamePh: 'Garcia Lopez', phonePh: '(888) 574-1286', emailPh: 'jane@email.com', messagePh: 'E.g.: I am a resident and want to petition for my husband…',
       selectOne: 'Select…',
       states: [['NC', 'North Carolina'], ['CA', 'California'], ['AZ', 'Arizona'], ['TX', 'Texas']] as [string, string][],
       cases: [['familiar', 'Family visa / K-1'], ['trabajo', 'Work visa'], ['estudiante', 'Student visa'], ['ciudadania', 'Citizenship / Green Card'], ['deportacion', 'Deportation defense / Asylum']] as [string, string][],
@@ -275,8 +336,8 @@ export const ui = {
       noRelation: 'Submitting this form does not create an attorney-client relationship.',
       successTitle: 'Thank you. An attorney will contact you soon.',
       successSub: 'We reply within 1 business day. Please watch your phone and email.',
-      errName: 'Please enter your full name.', errPhone: 'Please enter a valid phone number.', errEmail: 'Please enter a valid email.',
-      errState: 'Choose a state.', errCase: 'Choose a case type.', errConsent: 'You must agree to be contacted.',
+      errName: 'Please enter your first name.', errLastName: 'Please enter your last name.', errPhone: 'Please enter a valid phone number.', errEmail: 'Please enter a valid email.',
+      errState: 'Choose a state.', errCase: 'Choose a case type.', errStatus: 'Choose your current status.', errUrgency: 'Choose an option.', errConsent: 'You must agree to be contacted.',
     },
     service: {
       freeConsult: 'Free consultation · Spanish and English', soon: 'At a glance',
@@ -287,6 +348,53 @@ export const ui = {
       ctaTitle: 'Is this your case? Let’s talk.', ctaSub: 'Confidential consultation in your language. No commitment.',
       ctaBtn: 'Request consultation', legal: 'Attorney advertising. Results vary by case.',
       formPrefix: 'Schedule your ', formSuffix: ' consultation',
+    },
+    privacy: {
+      seoTitle: 'Privacy policy — Diener Law Attorneys',
+      seoDesc: 'How Diener Law collects, uses, and protects your personal information on this website.',
+      crumbHome: 'Home', crumbHere: 'Privacy policy',
+      heroEyebrow: 'Legal notice',
+      heroTitle: 'Privacy policy',
+      heroSub: 'Your privacy matters to us. This notice explains our online information practices.',
+      updated: 'Last updated: October 2026',
+      sections: [
+        {
+          h: 'Your privacy',
+          p: ['Your privacy is important to us. To better protect your privacy we provide this notice explaining our online information practices and the choices you can make about the way your information is collected and used. You agree to these policies by virtue of using our website in a way that leads to you providing us with personal information.'],
+        },
+        {
+          h: 'State law & accompanying rights',
+          p: ['Please understand that you may have additional rights originating from State laws based on where you live. These State-based rights may augment, strengthen, or otherwise somehow compliment any privacy rights you have inherently or under Federal law. Our policy is to comply fully with the privacy policies of every jurisdiction in which we operate. Accordingly, you are free to use our contact information to reach us at any time to assert any State rights.'],
+        },
+        {
+          h: 'Our commitment to children’s privacy',
+          p: ['Protecting the privacy of the very young is especially important. For that reason, our website will never collect or maintain information at our website from those we actually know are under 18, and no part of our website is structured to attract anyone under 18.', 'Under our Terms of Service and Conditions of Use, children under 18 are not allowed to use our website and access our services. It is not our intention to offer products or services to minors.'],
+        },
+        {
+          h: 'Collection of personal information',
+          p: ['When visiting our website, the IP address used to access our website may be logged along with the dates and times of access. This information is purely used to analyze trends, administer our website, track users movement, and gather broad demographic information for internal use such as statistical assessments and website improvement. Most importantly, any recorded IP addresses are not linked to personally identifiable information.', 'Other information may be collected as well, which is rather typical of most websites. For instance, the source that referred you to our website is generally known. Likewise, your duration on our website, and your destination when you leave our website can also be tracked. Other common data collected includes the type of operating system the computer you are using to access our website has. Similarly, the type of web browser is often noted. Again, this is common data collection, and helps ultimately produce a better end-user experience.', 'Cookies are another common internet practice. Cookies are a key means of improving user experience by allowing us to customize your use of our website. Simple information is transferred to your computer to allow the content and experience to reflect your actions, preferences, and so on. You should simply make the assumption our website uses cookies, and note that you are free to make adjustments in your web browser to disable these or otherwise receive notification of cookies so you can take whatever desired action you so choose. Please understand that refusing cookies may cripple some of our website features and render some aspects useless to you.', 'At times, you will be fully aware of information received, as you are the direct source providing it. For instance, when requesting a consultation you complete a form with your name, phone number, email address, state of interest, case type, and message. Refusing to provide some of this information may lead to us being unable to provide you with the services you requested.'],
+        },
+        {
+          h: 'Handling of personal information',
+          p: ['Note that any personal information you provide to others apart from us or our vendors is wholly optional and beyond our control, becoming subject to the policy that party has in place.', 'Our primary intention for collecting personal and private information from you is simply to conduct our business and to better serve you. We see no reason to share your personal information to other parties and outside interests unless you have authorized us to do so. There are instances where your information is stored with third party service providers, limited in how they use your information, and they cannot sell or transfer it to others in any way.', 'However, this aggregate of information, as a whole rather than individually, may be used to understand our overall user base or be shared with third parties in our sole discretion.', 'While we are staunch privacy advocates, there are times when even we may be forced by law to share your information, such as illegal activity or other serious acts or allegations that could create legal liability, or in order to protect our own interests — for instance, in cases of suspected or alleged copyright infringement or other intellectual property violations.'],
+        },
+        {
+          h: 'Google AdSense and the DoubleClick DART cookie',
+          p: ['Google, as a third party advertisement vendor, may use cookies to serve ads on this website. The use of DART cookies by Google enables them to serve adverts to visitors that are based on their visits to this website, including past visits, as well as other websites on the internet.', 'To opt out of the DART cookies you may visit the Google ad and content network privacy policy at the following url http://www.google.com/privacy_ads.html. Tracking of users through the DART cookie mechanisms are subject to Google’s own privacy policies.', 'Other third party ad servers or ad networks may also use cookies to track users activities on this website to measure advertisement effectiveness; our website has no access or control over these cookies, which are governed by their own privacy policies. You can opt out of some, though likely not all, of these cookies in one easy location at http://ww.networkadvertising.org/managing/opt_out.asp.'],
+        },
+        {
+          h: 'Links to third party websites',
+          p: ['We have included links on this website for your use and reference. We are not responsible for the privacy policies on these websites. You should be aware that the privacy policies of these websites may differ from our own.'],
+        },
+        {
+          h: 'Change notice',
+          p: ['As with any of our administrative and legal notice pages, the contents of this page can and will change over time. Accordingly, this page could read differently as of your very next visit. These changes are necessitated, and carried out, in order to protect you and our website. If this page is important to you, you should check back frequently as no other notice of changed content will be provided either before or after the change takes effect.'],
+        },
+        {
+          h: 'Questions, comments, and concerns',
+          p: ['If you have any questions about the contents of this page, or simply wish to reach us for any other reason, you may call us at (919) 555-0100.'],
+        },
+      ],
     },
   },
 } satisfies Record<string, unknown>;

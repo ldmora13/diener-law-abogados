@@ -9,19 +9,19 @@ export const serviciosEn = [
 
 export const abogadosEn = [
   {
-    nombre: 'James Diener', cargo: 'Founding partner · Licensed in NC and CA', idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'More than 20 years guiding families through family petitions, naturalization, and court defense.',
-    credenciales: ['Admitted to the NC bar', 'AILA member'], destacado: true,
+    nombre: 'Richard “Bert” Diener', cargo: 'Founder · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'More than 20 years guiding families through family petitions, naturalization, and defense.',
+    credenciales: ['University of North Carolina at Chapel Hill', 'UNC National Trial Team member'], destacado: true,
   },
   {
-    nombre: 'María Fernández', cargo: 'Senior associate · Licensed in TX', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    nombre: 'Elaine Hartman', cargo: 'Senior associate · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
     bio: 'Focused on work visas and adjustment of status. Explains every form in plain language.',
-    credenciales: ['Admitted to the TX bar', 'AILA member'],
+    credenciales: ['University of North Carolina at Chapel Hill', 'North Carolina Review editor'],
   },
   {
-    nombre: 'Carlos Ramírez', cargo: 'Associate · Licensed in AZ and CA', idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Handles asylum and deportation defense cases, with close attention to deadlines and bonds.',
-    credenciales: ['Admitted to the AZ bar'],
+    nombre: 'Russell Johnson', cargo: 'Senior associate · Personal Injury Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'Board Certified Specialist in North Carolina Workers’ Compensation Law, also licensed in California, Arizona, and Texas.',
+    credenciales: ['Executive Editor, First Amendment Law Review', 'Golden Key National Honor Society member'],
   },
 ];
 
@@ -34,9 +34,9 @@ export const faqsEn = [
 ];
 
 export const testimoniosEn = [
-  { cita: 'They explained every step in Spanish and we always knew which document came next.', nombre: 'The Hernández Family', caso: 'Family green card · Charlotte, NC' },
-  { cita: 'I arrived afraid for my hearing and left with a clear plan for my family.', nombre: 'Rosa M.', caso: 'Court defense · Raleigh, NC' },
-  { cita: 'They prepared my citizenship interview with patience until I felt ready.', nombre: 'Javier T.', caso: 'Naturalization · Phoenix, AZ' },
+  { cita: 'They explained every step to us and accompanied us to every appointment. Thanks to them, we obtained our Green Card.', nombre: 'Gilberto D.', caso: 'Family green card · Charlotte, NC' },
+  { cita: 'Thanks to your help, I obtained my work visa and can now work legally in the United States.', nombre: 'Daniel', caso: 'Work visa · Raleigh, NC' },
+  { cita: 'They prepared my citizenship interview with patience until I felt ready.', nombre: 'Martha R.', caso: 'Naturalization · Phoenix, AZ' },
 ];
 
 export const casosEn = [

@@ -40,6 +40,13 @@
   --radius-input: 4px;
 }
 
+@theme inline {
+  --shadow-input:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
+}
+
 :root {
   --overlay-hero: linear-gradient(180deg, rgba(31, 52, 97, 0.88) 0%, rgba(31, 52, 97, 0.78) 100%);
   --focus-ring: 0 0 0 3px rgba(42, 74, 130, 0.2);

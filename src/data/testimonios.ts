@@ -6,18 +6,18 @@ export interface Testimonio {
 
 export const testimonios: Testimonio[] = [
   {
-    cita: 'Nos explicaron cada paso en español y siempre supimos qué documento seguía.',
-    nombre: 'Familia Hernández',
+    cita: 'Nos explicaron cada paso y nos acompañaron a cada cita. Gracias a ellos, obtuvimos nuestra Green Card.',
+    nombre: 'Gilberto D.',
     caso: 'Green card familiar · Charlotte, NC',
   },
   {
-    cita: 'Llegué con miedo por mi audiencia y salí con un plan claro para mi familia.',
-    nombre: 'Rosa M.',
-    caso: 'Defensa en corte · Raleigh, NC',
+    cita: 'Gracias a su ayuda, obtuve mi visa de trabajo y ahora puedo trabajar legalmente en los Estados Unidos.',
+    nombre: 'Daniel',
+    caso: 'Visa de trabajo · Raleigh, NC',
   },
   {
     cita: 'Prepararon mi entrevista de ciudadanía con paciencia hasta que me sentí lista.',
-    nombre: 'Javier T.',
+    nombre: 'Martha R.',
     caso: 'Naturalización · Phoenix, AZ',
   },
 ];

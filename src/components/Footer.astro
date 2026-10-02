@@ -15,12 +15,11 @@ const servicios = [
   { slug: 'defensa-deportacion', titulo: lang === 'es' ? 'Defensa de deportación' : 'Deportation defense' },
 ];
 const oficinas = [
-  { estado: lang === 'es' ? 'Carolina del Norte' : 'North Carolina', dir: 'Charlotte, NC', tel: '(919) 555-0100' },
-  { estado: lang === 'es' ? 'California' : 'California', dir: 'Los Ángeles, CA', tel: '(213) 555-0100' },
-  { estado: lang === 'es' ? 'Arizona' : 'Arizona', dir: 'Phoenix, AZ', tel: '(602) 555-0100' },
-  { estado: lang === 'es' ? 'Texas' : 'Texas', dir: 'Dallas, TX', tel: '(214) 555-0100' },
+  { estado: lang === 'es' ? 'Carolina del Norte' : 'North Carolina', dir: 'Greenville, NC', tel: '(252) 747-7400' },
+  { estado: lang === 'es' ? 'California' : 'California', dir: 'Santa Ana, CA', tel: '(949) 649-6378' },
+  { estado: lang === 'es' ? 'Arizona' : 'Arizona', dir: 'Phoenix, AZ', tel: '(602) 838-6665' },
+  { estado: lang === 'es' ? 'Texas' : 'Texas', dir: 'Dallas, TX', tel: '(469) 218-2269' },
 ];
-const citaHref = serviceBase.startsWith('/en') ? '/en#cita' : '/#cita';
 ---
 <footer class="bg-night-deep text-paper">
   <div class="mx-auto max-w-[1200px] px-6 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -46,15 +45,12 @@ const citaHref = serviceBase.startsWith('/en') ? '/en#cita' : '/#cita';
     </div>
     <div>
       <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.contact}</p>
+       <a href="tel:888-574-1286">(888) 574-1286</a>
       <p class="mt-4 font-body text-[16px] text-paper/80">{t.contactText}<br />{lang === 'es' ? 'Lun–Vie 9:00–18:00' : 'Mon–Fri 9:00 AM–6:00 PM'}</p>
-      <a href={citaHref} class="link-arrow !text-verdict-gold mt-4">{t.schedule} →</a>
+      <button type="button" data-open-cita class="link-arrow !text-verdict-gold mt-4 cursor-pointer">{t.schedule} <span aria-hidden="true">→</span></button>
     </div>
   </div>
-  <div class="border-t border-white/10">
-    <div class="mx-auto max-w-[1200px] px-6 py-6">
-      <p class="font-body text-[13px] text-paper/80">{t.legal}</p>
-    </div>
-  </div>
+  <p class="text-center text-xs text-paper/80 pb-5">© 2026 Diener Law, PA. All rights reserved. DIENER LAW™ is a service mark of Diener Law, PA. <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="underline underline-offset-4">{t.privacyLink}</a></p>
   <div class="h-16 lg:hidden" aria-hidden="true"></div>
   
 </footer>

@@ -2,7 +2,7 @@
 // ponytail: dominio provisional — reemplazar SITE_URL por el dominio real al publicar.
 export const SITE_URL = 'https://www.dienerlaw.com';
 export const SITE_NAME = 'Diener Law Abogados';
-export const PHONE_DISPLAY = '(919) 555-0100';
+export const PHONE_DISPLAY = '(888) 574-1286';
 export const PHONE_HREF = 'tel:+19195550100';
 
 export const OFFICES = [
