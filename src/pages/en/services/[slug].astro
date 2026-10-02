@@ -1,0 +1,140 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Button from '../../../components/Button.astro';
+import IconCircle from '../../../components/IconCircle.astro';
+import AppointmentForm from '../../../components/AppointmentForm.tsx';
+import ChatWidget from '../../../components/ChatWidget.tsx';
+import { ui } from '../../../data/i18n.ts';
+import { detalleEn } from '../../../data/content-en.ts';
+import { faqSchema, breadcrumbSchema } from '../../../data/schemas.ts';
+
+export function getStaticPaths() {
+  return detalleEn.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const servicio = detalleEn.find((s) => s.slug === slug);
+if (!servicio) throw new Error(`Service not found: ${slug}`);
+const t = ui.en.service;
+---
+
+<Layout
+  lang="en"
+  title={`${servicio.titulo} — Diener Law Attorneys`}
+  description={servicio.resumen}
+  path={`/en/services/${servicio.slug}`}
+  altEs={`/servicios/${servicio.slug}`}
+  altEn={`/en/services/${servicio.slug}`}
+  schemas={[
+    faqSchema(servicio.faqs.map((f) => ({ pregunta: f.pregunta, respuesta: f.respuesta }))),
+    breadcrumbSchema([
+      { name: 'Home', path: '/en/' },
+      { name: servicio.titulo, path: `/en/services/${servicio.slug}` },
+    ]),
+  ]}
+>
+  <Header slot="header" lang="en" base="/en" switchHref={`/servicios/${servicio.slug}`} />
+  <Footer slot="footer" lang="en" serviceBase="/en/services" />
+
+  <section class="bg-counsel-navy">
+    <div data-hero-parallax class="mx-auto max-w-[1200px] px-6 py-16 text-center">
+      <div class="flex justify-center mb-6">
+        <IconCircle size={80} variant="gold" label={servicio.titulo}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg>
+        </IconCircle>
+      </div>
+      <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">{t.freeConsult}</p>
+      <h1 class="font-heading font-bold text-[32px] md:text-[40px] text-paper mt-3">{servicio.titulo}</h1>
+      <p class="font-body text-[16px] leading-[1.6] text-paper mx-auto max-w-[760px] mt-4">{servicio.resumen}</p>
+      <div class="mt-8"><Button href="#cita-servicio">{ui.en.hero.cta}</Button></div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-[1200px] px-6 py-16 grid gap-12 lg:grid-cols-[260px_1fr]">
+    <aside class="hidden lg:block">
+      <nav aria-label={t.navLabel} class="sticky top-28 border-l border-mist">
+        {[
+          ['#para-quien', t.forWho],
+          ['#requisitos', t.requirements],
+          ['#proceso', t.process],
+          ['#plazos', t.deadlines],
+          ['#faq-servicio', t.faq],
+        ].map(([href, label]) => (
+          <a href={href} class="block px-4 py-3 min-h-[44px] font-body text-[14px] font-semibold text-quiet-slate border-l-[3px] border-transparent hover:border-verdict-gold hover:text-authority-blue">{label}</a>
+        ))}
+        <p class="px-4 pt-4 font-body text-[13px] text-quiet-slate">{t.otherAreas}</p>
+        {detalleEn.filter((s) => s.slug !== servicio.slug).map((s) => (
+          <a href={`/en/services/${s.slug}`} class="block px-4 py-2 min-h-[44px] font-body text-[14px] text-authority-blue underline underline-offset-4">{s.titulo}</a>
+        ))}
+      </nav>
+    </aside>
+
+    <div class="max-w-[760px]">
+      <nav aria-label="Breadcrumb" class="mb-6 font-body text-[14px] text-quiet-slate">
+        <a href="/en/" class="underline underline-offset-4">Home</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-authority-blue font-semibold">{servicio.titulo}</span>
+      </nav>
+      <div data-reveal class="bg-sky-mist border-l-4 border-authority-blue rounded-[4px] p-6" role="note" aria-label={servicio.titulo}>
+        <p class="font-heading text-[20px] uppercase text-authority-blue">{t.soon}</p>
+        <ul class="mt-3 space-y-2 font-body text-[16px] leading-[1.6]">
+          <li><strong>{t.who}</strong> {servicio.paraQuien[0]}.</li>
+          <li><strong>{t.time}</strong> {servicio.plazos}</li>
+          <li><strong>{t.firstStep}</strong> {servicio.proceso[0].titulo} — {servicio.proceso[0].desc}</li>
+        </ul>
+      </div>
+
+      <h2 id="para-quien" class="font-heading font-semibold text-[30px] text-authority-blue mt-12 scroll-mt-28">{t.forWho}</h2>
+      <ul class="mt-4 space-y-2 font-body text-[16px] leading-[1.6]">
+        {servicio.paraQuien.map((p) => (<li class="flex gap-2"><span aria-hidden="true" class="text-approved-green font-bold">✓</span>{p}</li>))}
+      </ul>
+
+      <h2 id="requisitos" class="font-heading font-semibold text-[30px] text-authority-blue mt-12 scroll-mt-28">{t.requirements}</h2>
+      <ul class="mt-4 space-y-2 font-body text-[16px] leading-[1.6]">
+        {servicio.requisitos.map((r) => (<li class="flex gap-2"><span aria-hidden="true" class="text-authority-blue">•</span>{r}</li>))}
+      </ul>
+
+      <h2 id="proceso" class="font-heading font-semibold text-[30px] text-authority-blue mt-12 scroll-mt-28">{t.process}</h2>
+      <ol class="mt-4 space-y-6">
+        {servicio.proceso.map((p, i) => (
+          <li class="flex gap-4">
+            <span aria-hidden="true" class="w-12 h-12 rounded-full bg-authority-blue text-paper font-heading text-[20px] inline-flex items-center justify-center shrink-0">{i + 1}</span>
+            <div><h3 class="font-heading text-[20px] text-authority-blue">{p.titulo}</h3><p class="font-body text-[16px] leading-[1.6]">{p.desc}</p></div>
+          </li>
+        ))}
+      </ol>
+
+      <h2 id="plazos" class="font-heading font-semibold text-[30px] text-authority-blue mt-12 scroll-mt-28">{t.deadlines}</h2>
+      <p class="font-body text-[16px] leading-[1.6] mt-4"><strong>{t.deadlinesL}</strong> {servicio.plazos}</p>
+      <p class="font-body text-[16px] leading-[1.6] mt-2"><strong>{t.costsL}</strong> {servicio.costos}</p>
+
+      <h2 id="faq-servicio" class="font-heading font-semibold text-[30px] text-authority-blue mt-12 scroll-mt-28">{t.faq}</h2>
+      <div class="mt-4">
+        {servicio.faqs.map((f) => (
+          <details class="border-b border-mist py-4">
+            <summary class="font-body text-[18px] font-semibold text-authority-blue cursor-pointer min-h-[44px]">{f.pregunta}</summary>
+            <p class="font-body text-[16px] leading-[1.6] mt-2">{f.respuesta}</p>
+          </details>
+        ))}
+      </div>
+
+      <div data-reveal class="bg-parchment border border-mist rounded-[4px] p-8 mt-12 text-center">
+        <h2 class="font-heading text-[24px] text-authority-blue">{t.ctaTitle}</h2>
+        <p class="font-body text-[16px] mt-2">{t.ctaSub}</p>
+        <div class="mt-6"><Button href="#cita-servicio">{t.ctaBtn}</Button></div>
+        <p class="font-body text-[13px] text-quiet-slate mt-4">{t.legal}</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="cita-servicio" class="bg-justice-blue scroll-mt-20">
+    <div class="mx-auto max-w-[760px] px-6 py-16">
+      <h2 class="font-heading font-semibold text-[30px] text-paper text-center">{t.formPrefix}{servicio.titulo.toLowerCase()}{t.formSuffix}</h2>
+      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10 mt-8">
+        <AppointmentForm lang="en" client:visible />
+      </div>
+    </div>
+  </section>
+
+  <ChatWidget lang="en" client:visible />
+</Layout>

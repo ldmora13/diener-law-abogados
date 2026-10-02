@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+import Button from '../../components/Button.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import LawyerCard from '../../components/LawyerCard.astro';
+import ProcessTimeline from '../../components/ProcessTimeline.astro';
+import Testimonial from '../../components/Testimonial.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import FaqAccordion from '../../components/FaqAccordion.tsx';
+import AppointmentForm from '../../components/AppointmentForm.tsx';
+import ChatWidget from '../../components/ChatWidget.tsx';
+import { ui } from '../../data/i18n.ts';
+import { serviciosEn, abogadosEn, faqsEn, testimoniosEn, casosEn, statsEn } from '../../data/content-en.ts';
+import { faqSchema } from '../../data/schemas.ts';
+
+const t = ui.en;
+---
+
+<Layout lang="en" path="/en/" altEs="/" altEn="/en/" schemas={[faqSchema(faqsEn)]} title="Diener Law Attorneys — Immigration lawyers in NC, CA, AZ & TX" description="Immigration law firm. Family, work, and student visas, citizenship, green cards, and deportation defense. Confidential consultation in English or Spanish.">
+  <Header slot="header" lang="en" base="/en" switchHref="/" />
+  <Footer slot="footer" lang="en" serviceBase="/en/services" />
+
+  <Hero lang="en" />
+
+  <section id="servicios" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow={t.services.eyebrow} title={t.services.title} />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+        {serviciosEn.map((s) => (
+          <ServiceCard titulo={s.titulo} descripcion={s.descripcion} icono={s.icono} href={`/en/services/${s.slug}`} more={t.services.more} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="por-que" class="panel-diagonal">
+    <div class="mx-auto max-w-[1200px] px-6 py-24 lg:py-[120px] grid gap-10 lg:grid-cols-2 items-center">
+      <div>
+        <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">{t.panel.eyebrow}</p>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">{t.panel.title}</h2>
+        <p class="font-heading text-[24px] text-verdict-gold mt-4">{t.panel.gold}</p>
+        <p class="font-body text-[16px] leading-[1.6] text-paper mt-4 max-w-[60ch]">{t.panel.para}</p>
+        <div class="mt-8"><Button variant="secondary-dark" href="#cita">{t.panel.cta}</Button></div>
+      </div>
+      <div class="relative">
+        <div class="bg-paper/10 border border-white/20 rounded-[4px] aspect-[3/2] flex items-center justify-center lg:-my-16 lg:translate-y-0">
+          <p class="font-body text-paper/80 text-center px-8">{t.panel.photo}<br /><span class="text-[13px]">{t.panel.photoNote}</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow={t.team.eyebrow} title={t.team.title} />
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {abogadosEn.map((a) => (
+          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} destacado={a.destacado} lang="en" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso" class="bg-parchment">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow={t.process.eyebrow} title={t.process.title} />
+      <ProcessTimeline lang="en" />
+      <div class="text-center mt-10"><Button href="#cita">{t.process.cta}</Button></div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow={t.testimonials.eyebrow} title={t.testimonials.title} />
+      <div class="grid gap-6 lg:grid-cols-3">
+        {testimoniosEn.map((item) => (<Testimonial cita={item.cita} nombre={item.nombre} caso={item.caso} lang="en" />))}
+      </div>
+      <p class="font-body text-[13px] text-quiet-slate text-center mt-6">{t.testimonials.note}</p>
+    </div>
+  </section>
+
+  <section id="casos">
+    <div class="bg-counsel-navy">
+      <div class="mx-auto max-w-[1200px] px-6 py-12 grid gap-8 text-center sm:grid-cols-3">
+        {statsEn.map((s) => (
+          <div><p class="font-heading font-bold text-[48px] leading-none text-verdict-gold" data-count={s.count} data-prefix={s.prefix}>{s.valor}</p><p class="font-body text-[14px] text-paper/85 mt-2">{s.etiqueta}</p></div>
+        ))}
+      </div>
+    </div>
+    <div class="bg-paper">
+      <div class="mx-auto max-w-[1200px] px-6 py-16">
+        <SectionHeading eyebrow={t.cases.eyebrow} title={t.cases.title} />
+        <div class="grid gap-6 lg:grid-cols-3">
+          {casosEn.map((c) => (<CaseCard tipo={c.tipo} titulo={c.titulo} situacion={c.situacion} estrategia={c.estrategia} resultado={c.resultado} lang="en" />))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-parchment">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow={t.faq.eyebrow} title={t.faq.title} />
+      <FaqAccordion items={faqsEn} lang="en" citaHref="#cita" client:visible />
+    </div>
+  </section>
+
+  <section id="cita" class="bg-justice-blue">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <div>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[40px] text-paper">{t.cita.title}</h2>
+        <p class="font-body text-[20px] font-semibold text-paper mt-3">{t.cita.subtitle}</p>
+        <ul class="mt-6 space-y-3 font-body text-[16px] text-paper">
+          <li><a href="tel:+19195550100" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">📞 (919) 555-0100</a></li>
+          <li>{t.cita.hours}</li>
+          <li>{t.cita.areas}</li>
+        </ul>
+      </div>
+      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10">
+        <AppointmentForm lang="en" client:visible />
+      </div>
+    </div>
+  </section>
+
+  <ChatWidget lang="en" client:visible />
+</Layout>

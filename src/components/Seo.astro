@@ -1,0 +1,41 @@
+---
+import { SITE_URL, SITE_NAME } from '../data/site.ts';
+import type { Lang } from '../data/i18n.ts';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: Lang;
+  path?: string;
+  altEs?: string;
+  altEn?: string;
+  schemas?: unknown[];
+}
+const { title, description, lang = 'es', path = '/', altEs = '/', altEn = '/en/', schemas = [] } = Astro.props;
+const canonical = `${SITE_URL}${path}`;
+const locale = lang === 'es' ? 'es_ES' : 'en_US';
+const localeAlt = lang === 'es' ? 'en_US' : 'es_ES';
+---
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#1f3461" />
+<meta name="geo.region" content="US-NC" />
+<meta name="geo.placename" content="Charlotte, NC" />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="es" href={`${SITE_URL}${altEs}`} />
+<link rel="alternate" hreflang="en" href={`${SITE_URL}${altEn}`} />
+<link rel="alternate" hreflang="x-default" href={`${SITE_URL}/`} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={locale} />
+<meta property="og:locale:alternate" content={localeAlt} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<title>{title}</title>
+{schemas.map((s) => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

@@ -1,11 +1,137 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import LawyerCard from '../components/LawyerCard.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
+import Testimonial from '../components/Testimonial.astro';
+import CaseCard from '../components/CaseCard.astro';
+import FaqAccordion from '../components/FaqAccordion.tsx';
+import AppointmentForm from '../components/AppointmentForm.tsx';
+import ChatWidget from '../components/ChatWidget.tsx';
+import { servicios } from '../data/servicios.ts';
+import { abogados } from '../data/abogados.ts';
+import { faqs } from '../data/faq.ts';
+import { testimonios } from '../data/testimonios.ts';
+import { casos, stats } from '../data/casos.ts';
+import { faqSchema } from '../data/schemas.ts';
 ---
 
-<Layout>
-	<Welcome />
+<Layout path="/" altEs="/" altEn="/en/" schemas={[faqSchema(faqs)]}>
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <Hero />
+
+  {/* 3. Servicios */}
+  <section id="servicios" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow="Cómo te ayudamos" title="Casos de inmigración con los que te podemos ayudar" />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+        {servicios.map((s) => (
+          <ServiceCard titulo={s.titulo} descripcion={s.descripcion} icono={s.icono} href={`/servicios/${s.slug}`} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 4. Panel diagonal */}
+  <section id="por-que" class="panel-diagonal">
+    <div class="mx-auto max-w-[1200px] px-6 py-24 lg:py-[120px] grid gap-10 lg:grid-cols-2 items-center">
+      <div>
+        <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">Por qué Diener Law</p>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">Abogados de Derecho Migratorio en Carolina del Norte, California y Arizona</h2>
+        <p class="font-heading text-[24px] text-verdict-gold mt-4">Cercanos, claros y de tu lado</p>
+        <p class="font-body text-[16px] leading-[1.6] text-paper mt-4 max-w-[60ch]">Te explicamos cada formulario y cada plazo en español, sin tecnicismos. Preparamos tu caso con listas claras y te acompañamos a cada cita y entrevista.</p>
+        <div class="mt-8"><Button variant="secondary-dark" href="#cita">Conoce nuestro proceso</Button></div>
+      </div>
+      <div class="relative">
+        <div class="bg-paper/10 border border-white/20 rounded-[4px] aspect-[3/2] flex items-center justify-center lg:-my-16 lg:translate-y-0">
+          <p class="font-body text-paper/80 text-center px-8">Fotografía de familia<br /><span class="text-[13px]">(espacio reservado WebP 3:2)</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 5. Equipo */}
+  <section id="equipo" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow="Nuestro equipo" title="Abogados que luchan por tu familia" />
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {abogados.map((a) => (
+          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} destacado={a.destacado} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 6. Proceso */}
+  <section id="proceso" class="bg-parchment">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow="Paso a paso" title="Tu proceso migratorio, claro desde el inicio" />
+      <ProcessTimeline />
+      <div class="text-center mt-10"><Button href="#cita">Comienza tu evaluación gratuita</Button></div>
+    </div>
+  </section>
+
+  {/* 7. Testimonios */}
+  <section id="testimonios" class="bg-paper">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow="Lo que dicen" title="Historias de familias acompañadas" />
+      <div class="grid gap-6 lg:grid-cols-3">
+        {testimonios.map((t) => (<Testimonial cita={t.cita} nombre={t.nombre} caso={t.caso} />))}
+      </div>
+      <p class="font-body text-[13px] text-quiet-slate text-center mt-6">Testimonios compartidos con permiso. Los resultados varían según cada caso.</p>
+    </div>
+  </section>
+
+  {/* 8. Casos + stats */}
+  <section id="casos">
+    <div class="bg-counsel-navy">
+      <div class="mx-auto max-w-[1200px] px-6 py-12 grid gap-8 text-center sm:grid-cols-3">
+        {stats.map((s) => (
+          <div><p class="font-heading font-bold text-[48px] leading-none text-verdict-gold" data-count={s.count} data-prefix={s.prefix}>{s.valor}</p><p class="font-body text-[14px] text-paper/85 mt-2">{s.etiqueta}</p></div>
+        ))}
+      </div>
+    </div>
+    <div class="bg-paper">
+      <div class="mx-auto max-w-[1200px] px-6 py-16">
+        <SectionHeading eyebrow="Casos de éxito" title="Caminos reales hacia la residencia" />
+        <div class="grid gap-6 lg:grid-cols-3">
+          {casos.map((c) => (<CaseCard tipo={c.tipo} titulo={c.titulo} situacion={c.situacion} estrategia={c.estrategia} resultado={c.resultado} />))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 9. FAQ */}
+  <section id="faq" class="bg-parchment">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <SectionHeading eyebrow="Infórmate" title="Preguntas frecuentes" />
+      <FaqAccordion items={faqs} client:visible />
+    </div>
+  </section>
+
+  {/* 10. Cita */}
+  <section id="cita" class="bg-justice-blue">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <div>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[40px] text-paper">Habla con un abogado de inmigración</h2>
+        <p class="font-body text-[20px] font-semibold text-paper mt-3">Consulta confidencial. Respondemos en 1 día hábil.</p>
+        <ul class="mt-6 space-y-3 font-body text-[16px] text-paper">
+          <li><a href="tel:+19195550100" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">📞 (919) 555-0100</a></li>
+          <li>Lun–Vie 9:00–18:00 · Español e inglés</li>
+          <li>NC · CA · AZ · TX</li>
+        </ul>
+      </div>
+      <div class="bg-paper border border-mist rounded-[4px] p-6 md:p-10">
+        <AppointmentForm client:visible />
+      </div>
+    </div>
+  </section>
+
 </Layout>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  level?: 1 | 2;
+  dark?: boolean;
+  align?: 'center' | 'left';
+}
+const { eyebrow, title, level = 2, dark = false, align = 'center' } = Astro.props;
+const Tag = level === 1 ? 'h1' : 'h2';
+const alignCls = align === 'center' ? 'text-center mx-auto' : 'text-left';
+---
+<div data-reveal class={`max-w-[760px] ${alignCls} mb-12`}>
+  {eyebrow && (
+    <p
+      class={`font-body text-[13px] font-bold uppercase tracking-[0.08em] leading-[1.2] mb-4 ${dark ? 'text-verdict-gold' : 'text-authority-blue'}`}
+    >
+      {eyebrow}
+    </p>
+  )}
+  <Tag
+    class={`font-heading font-semibold text-[26px] leading-[1.15] md:text-[30px] lg:text-[40px] ${dark ? 'text-paper' : 'text-authority-blue'}`}
+  >
+    {title}
+  </Tag>
+  <div
+    aria-hidden="true"
+    class={`h-[2px] w-24 mt-6 ${align === 'center' ? 'mx-auto' : ''} ${dark ? 'bg-white/40' : 'bg-steel'}`}
+  />
+</div>

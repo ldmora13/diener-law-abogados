@@ -1,0 +1,30 @@
+---
+import { pasosEn } from '../data/content-en.ts';
+import type { Lang } from '../data/i18n.ts';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'es' } = Astro.props;
+const pasosEs = [
+  { n: 1, titulo: 'Consulta inicial', desc: 'Escuchamos tu historia y revisamos tus documentos en español.', tiempo: '1 día hábil' },
+  { n: 2, titulo: 'Evaluación de elegibilidad', desc: 'Te explicamos las vías posibles y sus requisitos.', tiempo: '1–2 semanas' },
+  { n: 3, titulo: 'Preparación de documentos', desc: 'Armamos tu expediente con listas claras y revisión completa.', tiempo: '2–4 semanas' },
+  { n: 4, titulo: 'Presentación ante USCIS', desc: 'Enviamos tu caso y damos seguimiento a cada aviso.', tiempo: 'Según USCIS' },
+  { n: 5, titulo: 'Seguimiento y resolución', desc: 'Te acompañamos a entrevistas hasta la decisión final.', tiempo: 'Caso por caso' },
+];
+const pasos = lang === 'es' ? pasosEs : pasosEn;
+---
+<ol class="grid gap-8 lg:grid-cols-5 lg:gap-6">
+  {pasos.map((p, i) => (
+    <li data-reveal class="relative flex lg:flex-col gap-4">
+      <span aria-hidden="true" class="timeline-dot w-12 h-12 rounded-full bg-authority-blue text-paper font-heading text-[20px] font-semibold inline-flex items-center justify-center shrink-0">{p.n}</span>
+      {i < pasos.length - 1 && <span aria-hidden="true" class="hidden lg:block absolute top-6 left-12 w-[calc(100%-3rem)] h-[2px] bg-steel"></span>}
+      <div>
+        <h3 class="font-heading text-[20px] font-semibold text-authority-blue">{p.titulo}</h3>
+        <p class="font-body text-[15px] leading-[1.6] mt-1">{p.desc}</p>
+        <span class="inline-block bg-sky-mist text-authority-blue font-body text-[13px] font-semibold px-2 py-1 rounded-[4px] mt-2">{p.tiempo}</span>
+      </div>
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Página no encontrada — Diener Law Abogados" description="La página que buscas no existe. Vuelve al inicio o agenda una consulta." path="/404">
+  <Header slot="header" base="/" switchHref="/en/" />
+  <Footer slot="footer" />
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-[760px] px-6 py-24 text-center">
+      <p class="font-heading font-bold text-[48px] text-authority-blue">404</p>
+      <h1 class="font-heading text-[30px] text-authority-blue mt-2">Esta página no existe / This page does not exist</h1>
+      <p class="font-body text-[16px] leading-[1.6] mt-4">Es posible que el enlace haya cambiado. Vuelve al inicio o habla con nosotros.</p>
+      <p class="font-body text-[16px] leading-[1.6] mt-1 text-quiet-slate">The link may have changed. Go back home or talk to us.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/">Volver al inicio</Button>
+        <Button variant="secondary" href="/en/">Go to English site</Button>
+      </div>
+    </div>
+  </section>
+</Layout>

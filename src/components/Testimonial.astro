@@ -1,0 +1,16 @@
+---
+import { ui, type Lang } from '../data/i18n.ts';
+interface Props { cita: string; nombre: string; caso: string; lang?: Lang; }
+const { cita, nombre, caso, lang = 'es' } = Astro.props;
+const starsLabel = ui[lang].testimonials.stars;
+const iniciales = nombre.split(' ').map((w) => w[0]).slice(0, 2).join('');
+---
+<figure data-reveal class="card-lift bg-paper border border-mist rounded-[4px] p-8">
+  <div aria-hidden="true" class="font-heading text-[64px] leading-none text-verdict-gold">“</div>
+  <blockquote class="font-accent italic text-[20px] leading-[1.6] text-slate-ink -mt-4">{cita}</blockquote>
+  <figcaption class="flex items-center gap-3 mt-6">
+    <span aria-hidden="true" class="w-12 h-12 rounded-full bg-sky-mist text-authority-blue font-body font-bold inline-flex items-center justify-center">{iniciales}</span>
+    <span><strong class="block font-body text-[15px] font-bold">{nombre}</strong><span class="block font-body text-[13px] text-quiet-slate">{caso}</span></span>
+  </figcaption>
+  <p class="mt-3 text-gold-deep tracking-widest" role="img" aria-label={starsLabel}>★★★★★</p>
+</figure>

@@ -1,0 +1,68 @@
+---
+import { ui, type Lang } from '../data/i18n.ts';
+
+interface Props {
+  lang?: Lang;
+  base?: string;
+  switchHref?: string;
+}
+const { lang = 'es', base = '', switchHref = '/en' } = Astro.props;
+const t = ui[lang];
+const nav = [
+  { href: `${base}#inicio`, label: t.nav.home },
+  { href: `${base}#por-que`, label: t.nav.why },
+  { href: `${base}#servicios`, label: t.nav.immigration },
+  { href: `${base}#faq`, label: t.nav.learn },
+  { href: `${base}#cita`, label: t.nav.contact },
+];
+const toggleLabel = lang === 'es' ? 'EN' : 'ES';
+---
+<header id="site-header" class="site-header bg-counsel-navy border-b border-white/10 sticky top-0 z-50">
+  <div class="mx-auto max-w-[1200px] px-6 h-16 lg:h-20 flex items-center justify-between gap-4">
+    <a href={base === '' ? '#inicio' : `${base}#inicio`} class="flex items-center gap-3 min-h-[44px]" aria-label="Diener Law Abogados — inicio">
+      <img src='/logo-white.webp' alt="Diener Law Abogados" class=" h-8" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-8" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
+      {nav.map((item, i) => (
+        <a
+          href={item.href}
+          aria-current={i === 0 ? 'page' : undefined}
+          class={`font-body text-[13px] font-semibold text-paper min-h-[44px] inline-flex items-center border-b-[3px] ${i === 0 ? 'border-verdict-gold' : 'border-transparent hover:border-paper/40'}`}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href="tel:+19195550100" class="font-heading text-[16px] text-paper border hover:bg-verdict-gold hover:text-counsel-navy border-verdict-gold px-4 py-2 min-h-[44px] inline-flex items-center transition-[background-color,color] duration-200 ease-out">{t.call}</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href={switchHref} data-lang-switch hreflang={lang === 'es' ? 'en' : 'es'} lang={lang === 'es' ? 'en' : 'es'} class="text-paper/80 font-body text-[13px] font-semibold min-w-[44px] min-h-[44px] inline-flex items-center justify-center underline decoration-verdict-gold decoration-2 underline-offset-4">{toggleLabel}</a>
+      <button id="menu-btn" class="lg:hidden text-paper min-w-[44px] min-h-[44px] inline-flex items-center justify-center" aria-expanded="false" aria-controls="menu-movil" aria-label={t.openMenu}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="menu-movil" class="lg:hidden grid grid-rows-[0fr] transition-[grid-template-rows] duration-200 ease-out bg-counsel-navy border-t border-white/10">
+    <div class="overflow-hidden">
+    <nav class="flex flex-col px-6 pb-8" aria-label={lang === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
+      {nav.map((item, i) => (
+        <a href={item.href} class={`font-body text-[16px] font-semibold text-paper py-3 min-h-[44px] border-b border-white/10 ${i === 0 ? 'underline decoration-verdict-gold decoration-[3px] underline-offset-8' : ''}`}>{item.label}</a>
+      ))}
+      <a href="tel:+19195550100" class="btn-primary mt-6 text-center">{t.callNow}</a>
+    </nav>
+    </div>
+  </div>
+</header>
+<script define:vars={{ openLabel: t.openMenu, closeLabel: t.closeMenu }}>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu-movil');
+  const setMenu = (open) => {
+    menu?.classList.toggle('grid-rows-[0fr]', !open);
+    menu?.classList.toggle('grid-rows-[1fr]', open);
+    btn?.setAttribute('aria-expanded', String(open));
+    btn?.setAttribute('aria-label', open ? closeLabel : openLabel);
+  };
+  btn?.addEventListener('click', () => {
+    setMenu(!menu?.classList.contains('grid-rows-[1fr]'));
+  });
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+</script>

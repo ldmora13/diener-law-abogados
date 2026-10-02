@@ -1,0 +1,18 @@
+---
+import IconCircle from './IconCircle.astro';
+interface Props { titulo: string; descripcion: string; icono: string; href: string; more?: string; }
+const { titulo, descripcion, icono, href, more = 'Saber más' } = Astro.props;
+const paths: Record<string, string> = {
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  'id-card': '<rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5 18c.7-1.5 2-2.5 3.5-2.5S11.3 16.5 12 18M14 9h5M14 13h5"/>',
+  scale: '<path d="M12 3v18M5 7l-3 7a4 4 0 0 0 6 0L5 7zm14 0l-3 7a4 4 0 0 0 6 0l-3-7zM3 7h18"/>',
+  cap: '<path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v6"/>',
+};
+---
+<article data-reveal class="group bg-paper border border-mist rounded-[4px] px-6 py-8 text-center flex flex-col items-center transition-[transform,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-authority-blue">
+  <h3 class="font-heading font-semibold text-[20px] uppercase tracking-[0.02em] text-authority-blue order-1">{titulo}</h3>
+  <div class="order-2 my-5"><IconCircle label={titulo}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={paths[icono] ?? paths.users} /></IconCircle></div>
+  <p class="font-body text-[15px] leading-[1.6] text-slate-ink order-3">{descripcion}</p>
+  <a href={href} class="link-arrow order-4 mt-5">{more} <span aria-hidden="true">→</span></a>
+</article>

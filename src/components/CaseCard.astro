@@ -1,0 +1,14 @@
+---
+import { ui, type Lang } from '../data/i18n.ts';
+interface Props { tipo: string; titulo: string; situacion: string; estrategia: string; resultado: string; lang?: Lang; }
+const { tipo, titulo, situacion, estrategia, resultado, lang = 'es' } = Astro.props;
+const t = ui[lang].cases;
+---
+<article data-reveal class="card-lift bg-paper border border-mist rounded-[4px] p-6">
+  <span class="inline-block bg-sky-mist text-authority-blue font-body text-[12px] font-bold px-2 py-1 rounded-[4px]">{tipo}</span>
+  <h3 class="font-heading text-[24px] font-medium text-authority-blue mt-3">{titulo}</h3>
+  <p class="font-body text-[15px] leading-[1.6] mt-3"><strong>{t.situation}</strong> {situacion} <strong>{t.strategy}</strong> {estrategia} <strong>{t.result}</strong> {resultado}</p>
+  <p class="inline-block mt-4 font-body text-[13px] font-bold text-approved-green bg-[#e1f2ea] px-2 py-1 rounded-[4px]">{t.approved}</p>
+  <p class="font-body text-[13px] text-quiet-slate mt-2">{t.disclaimer}</p>
+  <a href="#cita" class="link-arrow mt-3">{t.link} <span aria-hidden="true">→</span></a>
+</article>

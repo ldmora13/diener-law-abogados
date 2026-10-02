@@ -1,0 +1,46 @@
+---
+// Velo de transición ES ⇄ EN: cubre en navy 350ms, navega, revela al cargar.
+// Sin JS o con reduced-motion navega directo (enhancement progresivo).
+interface Props {
+  label?: string;
+}
+const { label = 'EN' } = Astro.props;
+---
+<div id="lang-veil" aria-hidden="true" class="fixed inset-0 z-[200] bg-counsel-navy flex items-center justify-center -translate-y-full pointer-events-none">
+  <span class="font-heading font-semibold text-[20px] uppercase tracking-[0.2em] text-verdict-gold">{label}</span>
+</div>
+<script>
+  const veil = document.getElementById('lang-veil');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (veil && !reduce) {
+    const D = '350ms';
+    let incoming = false;
+    try {
+      incoming = window.sessionStorage.getItem('lang-switch') === '1';
+      window.sessionStorage.removeItem('lang-switch');
+    } catch { incoming = false; }
+    if (incoming) {
+      // Llegada desde el otro idioma: empieza cubriendo y se retira.
+      veil.style.transition = 'none';
+      veil.classList.remove('-translate-y-full');
+      void veil.offsetHeight;
+      veil.style.transition = `transform ${D} ease-out`;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        veil.classList.add('-translate-y-full');
+      }));
+    } else {
+      veil.style.transition = `transform ${D} ease-out`;
+    }
+    // Salida: cubre en navy y navega.
+    document.addEventListener('click', (e) => {
+      const link = (e.target as HTMLElement).closest?.('a[data-lang-switch]') as HTMLAnchorElement | null;
+      if (!link || !link.href) return;
+      e.preventDefault();
+      try { window.sessionStorage.setItem('lang-switch', '1'); } catch { /* sigue */ }
+      veil.classList.remove('-translate-y-full');
+      window.setTimeout(() => {
+        window.location.href = link.href;
+      }, 380);
+    });
+  }
+</script>

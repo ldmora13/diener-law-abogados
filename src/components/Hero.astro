@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import heroImg from '../assets/CALIFORNIA-NORTH-CAROLINA-IMMIGRATION-ATTORNEYS-1024x821.webp';
+import Button from './Button.astro';
+import { ui, type Lang } from '../data/i18n.ts';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'es' } = Astro.props;
+const t = ui[lang].hero;
+---
+<section id="inicio" class="relative bg-counsel-navy overflow-hidden h-screen">
+  <div data-hero-media aria-hidden="true" class="absolute inset-0 overflow-hidden">
+    <Image
+      src={heroImg}
+      alt=""
+      data-hero-bg
+      widths={[768, 1024, 1440]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      class="h-full md:w-[110%] md:scale-90 md:h-auto object-cover object-center will-change-transform "
+    />
+  </div>
+  <div aria-hidden="true" class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,97,0.88) 0%, rgba(31,52,97,0.78) 100%)"></div>
+  <div data-hero-parallax class="relative mx-auto max-w-[900px] px-6 gap-y-5 py-16 md:py-24 text-center min-h-[440px] lg:min-h-[520px] flex flex-col items-center justify-center">
+    <h1 data-hero class="font-heading font-bold text-paper text-[32px] leading-[1.1] md:text-[40px] lg:text-[56px] max-w-[20ch]">
+      {t.title}
+    </h1>
+    <p data-hero class="font-heading font-medium text-paper text-[20px] md:text-[24px] mt-4">{t.subtitle}</p>
+    <div data-hero aria-hidden="true" class="mx-auto h-[3px] w-24 bg-verdict-gold"></div>
+    <p data-hero class="font-body text-[16px] leading-[1.6] text-paper mt-6 max-w-[760px]">
+      {t.para}
+    </p>
+    <div data-hero class="mt-8">
+      <Button href="#cita">{t.cta}</Button>
+    </div>
+    <p data-hero class="font-body text-[13px] text-paper/80 mt-4">{t.note}</p>
+  </div>
+</section>

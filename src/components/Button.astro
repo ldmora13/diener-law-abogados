@@ -1,0 +1,22 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'secondary-dark';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+const { variant = 'primary', href, type = 'button', class: cls = '' } = Astro.props;
+const classes =
+  variant === 'primary' ? `btn-primary ${cls}` : variant === 'secondary-dark' ? `btn-secondary btn-secondary--on-dark ${cls}` : `btn-secondary ${cls}`;
+---
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes}>
+      <slot />
+    </button>
+  )
+}

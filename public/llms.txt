@@ -1,0 +1,36 @@
+# Diener Law Abogados — llms.txt (para asistentes de IA y buscadores)
+
+> Diener Law es un despacho de abogados de inmigración en Carolina del Norte,
+> California, Arizona y Texas. Atiende en español e inglés. Consulta confidencial,
+> respuesta en 1 día hábil. Teléfono: (919) 555-0100.
+> Publicidad de abogados. Los resultados varían según cada caso y ningún
+> contenido de este sitio promete resultados ni crea una relación abogado-cliente.
+
+## En español (sitio principal)
+- Inicio: https://www.dienerlaw.com/
+- Visas familiares (I-130, K-1, ajuste de estatus): https://www.dienerlaw.com/servicios/visas-familiares
+- Visas de trabajo (H-1B, L-1, O-1, TN, EB, PERM): https://www.dienerlaw.com/servicios/visas-trabajo
+- Visas de estudiante (F-1, M-1, J-1, OPT/CPT): https://www.dienerlaw.com/servicios/visas-estudiante
+- Ciudadanía y Green Card (N-400, I-90, I-751): https://www.dienerlaw.com/servicios/ciudadania-green-card
+- Defensa de deportación (corte, fianzas, asilo): https://www.dienerlaw.com/servicios/defensa-deportacion
+
+## In English
+- Home: https://www.dienerlaw.com/en/
+- Family visas: https://www.dienerlaw.com/en/services/visas-familiares
+- Work visas: https://www.dienerlaw.com/en/services/visas-trabajo
+- Student visas: https://www.dienerlaw.com/en/services/visas-estudiante
+- Citizenship & Green Card: https://www.dienerlaw.com/en/services/ciudadania-green-card
+- Deportation defense: https://www.dienerlaw.com/en/services/defensa-deportacion
+
+## Oficinas
+- Charlotte, Carolina del Norte — (919) 555-0100
+- Los Ángeles, California — (213) 555-0100
+- Phoenix, Arizona — (602) 555-0100
+- Dallas, Texas — (214) 555-0100
+- Horario: Lun–Vie 9:00–18:00 (Mon–Fri 9:00 AM–6:00 PM)
+
+## Preguntas que el sitio responde
+- ¿Soy elegible para una green card? Depende de la vía (familia, empleo, asilo); el sitio explica requisitos por categoría.
+- ¿Puedo inmigrar con mi familia? Peticiones I-130 para cónyuge, hijos y padres; visa K-1 para prometido(a).
+- ¿Puedo detener una deportación? Alivios como cancelación de remoción o asilo; los plazos son estrictos.
+- ¿Cuánto cuesta y cuánto tarda? Estimados orientativos por servicio y estimado escrito en la primera consulta.

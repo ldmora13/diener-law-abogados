@@ -1,0 +1,63 @@
+---
+import { ui, type Lang } from '../data/i18n.ts';
+
+interface Props {
+  lang?: Lang;
+  serviceBase?: string;
+}
+const { lang = 'es', serviceBase = '/servicios' } = Astro.props;
+const t = ui[lang].footer;
+const servicios = [
+  { slug: 'visas-familiares', titulo: lang === 'es' ? 'Visas familiares' : 'Family visas' },
+  { slug: 'visas-trabajo', titulo: lang === 'es' ? 'Visas de trabajo' : 'Work visas' },
+  { slug: 'visas-estudiante', titulo: lang === 'es' ? 'Visas de estudiante' : 'Student visas' },
+  { slug: 'ciudadania-green-card', titulo: lang === 'es' ? 'Ciudadanía y Green Card' : 'Citizenship & Green Card' },
+  { slug: 'defensa-deportacion', titulo: lang === 'es' ? 'Defensa de deportación' : 'Deportation defense' },
+];
+const oficinas = [
+  { estado: lang === 'es' ? 'Carolina del Norte' : 'North Carolina', dir: 'Charlotte, NC', tel: '(919) 555-0100' },
+  { estado: lang === 'es' ? 'California' : 'California', dir: 'Los Ángeles, CA', tel: '(213) 555-0100' },
+  { estado: lang === 'es' ? 'Arizona' : 'Arizona', dir: 'Phoenix, AZ', tel: '(602) 555-0100' },
+  { estado: lang === 'es' ? 'Texas' : 'Texas', dir: 'Dallas, TX', tel: '(214) 555-0100' },
+];
+const citaHref = serviceBase.startsWith('/en') ? '/en#cita' : '/#cita';
+---
+<footer class="bg-night-deep text-paper">
+  <div class="mx-auto max-w-[1200px] px-6 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="font-accent italic text-[20px]">Diener Law <span class="not-italic font-body text-[12px] font-semibold uppercase">Abogados</span></p>
+      <p class="font-body text-[16px] leading-[1.6] text-paper/80 mt-4">{t.tagline}</p>
+    </div>
+    <nav aria-label={t.services}>
+      <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.services}</p>
+      <ul class="mt-4 space-y-1 font-body text-[16px] text-paper/80">
+        {servicios.map((s) => (
+          <li><a class="min-h-[44px] inline-flex items-center underline-offset-4 hover:underline" href={`${serviceBase}/${s.slug}`}>{s.titulo}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div>
+      <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.offices}</p>
+      <ul class="mt-4 space-y-3 font-body text-[16px] text-paper/80">
+        {oficinas.map((o) => (
+          <li><strong class="text-paper">{o.estado}</strong><br />{o.dir}<br /><a class="underline underline-offset-4" href={`tel:+1${o.tel.replace(/\D/g, '')}`}>{o.tel}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.contact}</p>
+      <p class="mt-4 font-body text-[16px] text-paper/80">{t.contactText}<br />{lang === 'es' ? 'Lun–Vie 9:00–18:00' : 'Mon–Fri 9:00 AM–6:00 PM'}</p>
+      <a href={citaHref} class="link-arrow !text-verdict-gold mt-4">{t.schedule} →</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-[1200px] px-6 py-6">
+      <p class="font-body text-[13px] text-paper/80">{t.legal}</p>
+    </div>
+  </div>
+  <div class="h-16 lg:hidden" aria-hidden="true"></div>
+  <div class="fixed bottom-0 inset-x-0 z-50 lg:hidden bg-counsel-navy border-t border-white/10 grid grid-cols-2">
+    <a href="tel:+19195550100" class="min-h-[44px] inline-flex items-center justify-center font-heading uppercase text-paper border border-verdict-gold m-2 rounded-[2px]">{t.callTab}</a>
+    <a href="#cita" class="min-h-[44px] inline-flex items-center justify-center font-heading uppercase bg-verdict-gold text-counsel-navy m-2 rounded-[2px]">{t.consultTab}</a>
+  </div>
+</footer>
