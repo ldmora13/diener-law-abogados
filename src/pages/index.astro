@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
@@ -18,6 +20,8 @@ import { faqs } from '../data/faq.ts';
 import { testimonios } from '../data/testimonios.ts';
 import { casos, stats } from '../data/casos.ts';
 import { faqSchema } from '../data/schemas.ts';
+
+import certificate from '../assets/logos/bcslogo2.png'
 ---
 
 <Layout path="/" altEs="/" altEn="/en/" schemas={[faqSchema(faqs)]}>
@@ -43,14 +47,18 @@ import { faqSchema } from '../data/schemas.ts';
     <div class="mx-auto max-w-[1200px] px-6 py-24 lg:py-[120px] grid gap-10 lg:grid-cols-2 items-center">
       <div>
         <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">Por qué Diener Law</p>
-        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">Abogados de Derecho Migratorio en Carolina del Norte, California y Arizona</h2>
+        <h2 class="font-heading font-semibold text-[30px] lg:text-[48px] leading-[1.15] text-paper mt-3">Abogados Certificados de Derecho Migratorio en Carolina del Norte, California y Arizona</h2>
         <p class="font-heading text-[24px] text-verdict-gold mt-4">Cercanos, claros y de tu lado</p>
         <p class="font-body text-[16px] leading-[1.6] text-paper mt-4 max-w-[60ch]">Te explicamos cada formulario y cada plazo en español, sin tecnicismos. Preparamos tu caso con listas claras y te acompañamos a cada cita y entrevista.</p>
         <div class="mt-8"><Button variant="secondary-dark" href="#cita">Conoce nuestro proceso</Button></div>
       </div>
-      <div class="relative">
-        <div class="bg-paper/10 border border-white/20 rounded-[4px] aspect-[3/2] flex items-center justify-center lg:-my-16 lg:translate-y-0">
-          <p class="font-body text-paper/80 text-center px-8">Fotografía de familia<br /><span class="text-[13px]">(espacio reservado WebP 3:2)</span></p>
+      <div class="relative flex justify-center">
+        <div class="panel-media-diagonal">
+          <Image
+            src={certificate}
+            alt="Certificado NC"
+            class="h-full w-full object-contain"
+          />
         </div>
       </div>
     </div>
@@ -60,9 +68,9 @@ import { faqSchema } from '../data/schemas.ts';
   <section id="equipo" class="bg-paper">
     <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
       <SectionHeading eyebrow="Nuestro equipo" title="Abogados que luchan por tu familia" />
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-3">
         {abogados.map((a) => (
-          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} destacado={a.destacado} />
+          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} foto={a.foto} destacado={a.destacado} />
         ))}
       </div>
     </div>

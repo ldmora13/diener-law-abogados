@@ -56,7 +56,7 @@ const t = ui.en;
   <section id="equipo" class="bg-paper">
     <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
       <SectionHeading eyebrow={t.team.eyebrow} title={t.team.title} />
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-3">
         {abogadosEn.map((a) => (
           <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} destacado={a.destacado} lang="en" />
         ))}

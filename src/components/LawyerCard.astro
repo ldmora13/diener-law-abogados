@@ -1,18 +1,27 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { ui, type Lang } from '../data/i18n.ts';
-interface Props { nombre: string; cargo: string; idiomas: string[]; bio: string; credenciales: string[]; destacado?: boolean; lang?: Lang; }
-const { nombre, cargo, idiomas, bio, credenciales, destacado, lang = 'es' } = Astro.props;
+interface Props { nombre: string; cargo: string; idiomas: string[]; bio: string | string[]; credenciales: string[]; foto?: ImageMetadata; cita?: string; destacado?: boolean; lang?: Lang; }
+const { nombre, cargo, idiomas, bio, credenciales, foto, cita, lang = 'es' } = Astro.props;
 const scheduleWith = ui[lang].team.scheduleWith;
+const portraitOf = ui[lang].about.portraitOf;
+const paras = Array.isArray(bio) ? bio : [bio];
 ---
-<article data-reveal class={`card-lift bg-paper border border-mist rounded-[4px] p-6 ${destacado ? 'md:col-span-2 md:grid md:grid-cols-[200px_1fr] md:gap-6' : ''}`}>
-  <div class="bg-parchment rounded-[4px] aspect-[4/5] flex items-center justify-center font-heading text-[40px] text-authority-blue" role="img" aria-label={`Retrato de ${nombre}`}>
-    {nombre.split(' ').map((w) => w[0]).slice(0, 2).join('')}
+<article data-reveal class="card-lift bg-paper border border-mist rounded-[4px] p-6">
+  <div class="bg-parchment rounded-[4px] aspect-[4/5] overflow-hidden flex items-center justify-center font-heading text-[40px] text-authority-blue" role="img" aria-label={`${portraitOf} ${nombre}`}>
+    {foto ? (
+      <Image src={foto} alt={`${portraitOf} ${nombre}`} class="h-full w-full object-cover" />
+    ) : (
+      nombre.split(' ').map((w) => w[0]).slice(0, 2).join('')
+    )}
   </div>
-  <div class="mt-5 md:mt-0">
+  <div class="mt-5">
     <h3 class="font-heading font-semibold text-[24px] text-authority-blue">{nombre}</h3>
     <p class="font-body text-[14px] font-semibold text-quiet-slate mt-1">{cargo}</p>
     <p class="flex gap-2 mt-3">{idiomas.map((l) => (<span class="bg-sky-mist text-authority-blue font-body text-[12px] font-bold px-2 py-1 rounded-[4px]">{l}</span>))}</p>
-    <p class="font-body text-[15px] leading-[1.6] mt-3">{bio}</p>
+    {paras.map((p) => (<p class="font-body text-[15px] leading-[1.6] mt-3">{p}</p>))}
+    {cita && (<blockquote class="mt-3 border-l-[3px] border-verdict-gold pl-3 font-body italic text-[15px] leading-[1.6] text-slate-ink">“{cita}”</blockquote>)}
     <ul class="mt-3 space-y-1">
       {credenciales.map((c) => (
         <li class="font-body text-[14px] text-quiet-slate flex items-center gap-2">
@@ -20,6 +29,5 @@ const scheduleWith = ui[lang].team.scheduleWith;
         </li>
       ))}
     </ul>
-    <a href="#cita" class="link-arrow mt-4">{scheduleWith} {nombre.split(' ')[0]} <span aria-hidden="true">→</span></a>
   </div>
 </article>

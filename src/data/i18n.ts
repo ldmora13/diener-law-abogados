@@ -4,7 +4,7 @@ export type Lang = 'es' | 'en';
 export const ui = {
   es: {
     skip: 'Saltar al contenido',
-    nav: { home: 'Inicio', why: 'Por qué Diener Law', immigration: 'Inmigración', learn: 'Infórmate', contact: 'Contáctenos' },
+    nav: { home: 'Inicio', why: 'Por qué Diener Law', immigration: 'Inmigración', learn: 'Infórmate', contact: 'Contáctenos', about: 'Nuestro equipo' },
     call: 'Llamar',
     callNow: 'Llamar ahora',
     openMenu: 'Abrir menú',
@@ -28,6 +28,74 @@ export const ui = {
       photoNote: '(espacio reservado WebP 3:2)',
     },
     team: { eyebrow: 'Nuestro equipo', title: 'Abogados que luchan por tu familia', scheduleWith: 'Agendar con' },
+    about: {
+      seoTitle: 'Nuestro equipo — Diener Law Abogados',
+      seoDesc: 'Conoce a los abogados de Diener Law: inmigración familiar, asilo, naturalización y lesiones personales en NC, CA, AZ y TX. Consulta confidencial en español.',
+      crumbHome: 'Inicio', crumbHere: 'Nuestro equipo', portraitOf: 'Retrato de',
+      heroEyebrow: 'Nuestro equipo',
+      heroTitle: 'Abogados que luchan por tu familia',
+      heroSub: 'Siete abogados con raíces inmigrantes, experiencia en tribunales y trato cercano en tu idioma.',
+      heroCta: 'Agenda tu consulta',
+      introEyebrow: 'El despacho',
+      introTitle: 'Experiencia diversa, una misma causa',
+      intro: [
+        'Diener Law es un despacho de inmigración con presencia en Carolina del Norte, California, Arizona y Texas. Nuestro equipo reúne a siete abogados con trayectorias distintas —veteranos, hijos de inmigrantes, ex defensores de organizaciones sin fines de lucro— que explican cada caso en lenguaje claro y sin tecnicismos.',
+        'Del asilo defensivo a la naturalización, de las peticiones familiares a las lesiones laborales: cada abogado aporta su especialidad y todos comparten el mismo compromiso de ir más allá del deber por sus clientes.',
+      ],
+      ctaTitle: '¿Hablamos de tu caso?',
+      ctaSub: 'Consulta confidencial. Respondemos en 1 día hábil.',
+      ctaBtn: 'Agendar consulta',
+      abogados: [
+        {
+          nombre: 'Richard “Bert” Diener', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Bert sirvió por cuatro años en el Cuerpo de Marines de Estados Unidos, con destinos en la Bahía de Guantánamo (Cuba), Okinawa (Japón) y Camp Lejeune. Mientras obtenía su título de abogado en la Universidad de Carolina del Norte en Chapel Hill, fue seleccionado para el equipo nacional de juicio simulado de UNC. Bert ha demostrado estar dispuesto a ir más allá del deber en sus esfuerzos por ayudar a los demás.'],
+          credenciales: ['Veterano del Cuerpo de Marines de EE. UU. (4 años)', 'UNC Chapel Hill — Facultad de Derecho', 'Equipo nacional de juicio simulado de UNC'],
+          cita: 'Estamos dedicados a ayudar a los inmigrantes a resolver sus problemas legales',
+        },
+        {
+          nombre: 'Elaine Hartman', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Originaria de Ohio, Elaine ha vivido en Carolina del Norte durante más de una década. Mientras asistía a la Universidad de Carolina del Norte en Chapel Hill se inspiró en la historia de inmigración de un conocido y decidió asistir a Carolina Law. Trabajó como editora de comentarios en North Carolina Review y participó en la Clínica de Inmigración. Cuando no está trabajando como abogada de inmigración en Diener Law, le gusta pasar tiempo con amigos y familiares e ir de compras.'],
+          credenciales: ['UNC Chapel Hill — Carolina Law', 'Editora de North Carolina Review', 'Clínica de Inmigración'],
+          cita: 'Orgullosamente sirviendo a inmigrantes de Carolina del Norte a California',
+        },
+        {
+          nombre: 'Russell Johnson', cargo: 'Abogado de Lesiones Personales', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Russell Johnson se unió a Diener Law en 2015 después de pasar más de una década como uno de los litigantes principales en Howard, Stallings, donde se centró en casos de lesiones graves y litigios comerciales complejos. Desde entonces, se ha convertido en Especialista Certificado por la Junta en Ley de Compensación Laboral en Carolina del Norte, además de estar licenciado en California, Arizona y Texas.'],
+          credenciales: ['Especialista Certificado — Compensación Laboral (NC)', 'Licenciado en CA, AZ y TX', 'En Diener Law desde 2015'],
+          cita: 'Los inmigrantes merecen ser compensados por lesiones en el trabajo y por accidente',
+        },
+        {
+          nombre: 'Italia Lima', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Italia Lima ha pasado toda su carrera legal manejando asuntos exclusivamente en el área de la Ley de Inmigración y Nacionalidad de los Estados Unidos. Asistió a la Universidad de California-Davis como estudiante de pre-derecho, graduándose en la Lista del Decano en 2008 con una Licenciatura en Artes. Recibió su título de Juris Doctor de la Universidad de Illinois, Chicago en 2015. Mientras estudiaba Derecho, trabajó como asistente judicial de la Honorable Jueza Elizabeth Loredo (retirada). También ayudó a inaugurar la primera clínica de inmigración de su escuela de derecho y se desempeñó como presidenta de la Asociación de Estudiantes de Derecho Latino.',
+            'Ha sido seleccionada como Estrella en Ascenso de Super Lawyers durante cuatro años consecutivos (2022 a 2025), un honor otorgado al 2.5% superior de los abogados de inmigración en el sur de California. Es hija orgullosa de inmigrantes mexicanos y la primera en su familia en asistir a la universidad y a la escuela de leyes en los Estados Unidos.',
+          ],
+          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., Universidad de Illinois Chicago'],
+        },
+        {
+          nombre: 'Kathleen Moscato', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Kathleen “Kat” Moscato nació y creció en Maryland. Cursó sus estudios universitarios en la Universidad de Boston entre 2007 y 2011, especializándose en Relaciones Internacionales y Ciencias Políticas. Asistió a la Escuela de Derecho de la Universidad de Elon de 2011 a 2014. Durante la universidad se enamoró de la ley de inmigración e hizo prácticas en Church World Services, otras caridades católicas y el Tribunal de Inmigración de Charlotte. Tras graduarse en 2014 comenzó su carrera en un bufete de inmigración en Charlotte practicando defensa de remoción y peticiones de visa U. Después del nacimiento de su hija en 2016 cambió de rumbo durante siete años y trabajó como abogada de Discapacidad del Seguro Social. Con todos sus hijos en la escuela, decidió volver a su verdadero amor y pasión: la ley de inmigración. Se unió a Diener Law en 2023. En su tiempo libre disfruta ser “Dance Mom” de sus tres hijos —Millie, William y Sloan— y le gusta correr en la caminadora y practicar yoga.'],
+          credenciales: ['Elon University School of Law (2011–2014)', 'En Diener Law desde 2023', 'B.A. Relaciones Internacionales, Boston University'],
+        },
+        {
+          nombre: 'Desiree De Jesus-Roman', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Desiree tiene una licenciatura en comunicaciones de la Universidad de Puerto Rico y un Juris Doctor de su Facultad de Derecho. Comenzó su carrera legal en 2014 como Oficial de Audiencias para una agencia gubernamental en Puerto Rico y también dirigió un bufete boutique en la isla.',
+            'Después de la devastación del huracán María en septiembre de 2017, cerró su práctica y se trasladó al área metropolitana de Washington, DC, donde comenzó a practicar la ley de inmigración. Sus luchas tras el huracán y la necesidad de reinventarse la motivaron a desarrollar una pasión por ayudar a otros a alcanzar su sueño americano.',
+            'Ha trabajado como abogada de inmigración en el sector privado y en organizaciones sin fines de lucro. Ha representado exitosamente a muchas personas en asilo defensivo y afirmativo, ajuste de estatus y naturalización. Es nativa en español y tiene licencia en Puerto Rico.',
+          ],
+          credenciales: ['J.D., Universidad de Puerto Rico', 'Licenciada en Puerto Rico', 'Enfoque: asilo y ajuste de estatus'],
+        },
+        {
+          nombre: 'Gabriela Jacob', cargo: 'Abogado', idiomas: ['PORTUGUÊS', 'ENGLISH'],
+          bio: [
+            'Gabriela “Gabi” Jacob comenzó su carrera profesional en su país natal, Brasil, donde trabajó como abogada corporativa. En 2015 se mudó a los Estados Unidos para estudiar inglés. Decidió continuar su carrera legal en este país y obtuvo su Maestría en Leyes (LL.M.) en Derecho de los Estados Unidos con honores magna cum laude en 2019. Fue admitida en el Colegio de Abogados de Washington en 2020. Antes de unirse a Diener Law, trabajó como abogada en una organización sin fines de lucro, donde representó con éxito a varias personas y sus familias en casos de asilo defensivo. Es nativa en portugués y está autorizada para ejercer en Brasil.',
+            'Vive con su esposo Brian, su hijo Yago, su perro Murph y dos gatos, Capi y Mocha. En su tiempo libre disfruta leer novelas de terror y suspenso, hacer senderismo, esquí de fondo y pasar tiempo con su familia.',
+          ],
+          credenciales: ['LL.M. magna cum laude (2019)', 'Admitida en Washington (2020)', 'Autorizada para ejercer en Brasil'],
+        },
+      ],
+    },
     process: { eyebrow: 'Paso a paso', title: 'Tu proceso migratorio, claro desde el inicio', cta: 'Comienza tu evaluación gratuita' },
     testimonials: { eyebrow: 'Lo que dicen', title: 'Historias de familias acompañadas', note: 'Testimonios compartidos con permiso. Los resultados varían según cada caso.', stars: 'Calificación: 5 de 5 estrellas' },
     cases: {
@@ -79,7 +147,7 @@ export const ui = {
   },
   en: {
     skip: 'Skip to content',
-    nav: { home: 'Home', why: 'Why Diener Law', immigration: 'Immigration', learn: 'Learn', contact: 'Contact Us' },
+    nav: { home: 'Home', why: 'Why Diener Law', immigration: 'Immigration', learn: 'Learn', contact: 'Contact Us', about: 'Our Team' },
     call: 'Call',
     callNow: 'Call now',
     openMenu: 'Open menu',
@@ -103,6 +171,75 @@ export const ui = {
       photoNote: '(WebP 3:2 placeholder)',
     },
     team: { eyebrow: 'Our team', title: 'Attorneys who fight for your family', scheduleWith: 'Schedule with' },
+    about: {
+      seoTitle: 'Our team — Diener Law Attorneys',
+      seoDesc: 'Meet the Diener Law attorneys: family immigration, asylum, naturalization, and personal injury in NC, CA, AZ & TX. Confidential consultation in English or Spanish.',
+      crumbHome: 'Home', crumbHere: 'Our team', portraitOf: 'Portrait of',
+      heroEyebrow: 'Our team',
+      heroTitle: 'Attorneys who fight for your family',
+      heroSub: 'Seven attorneys with immigrant roots, courtroom experience, and personal attention in your language.',
+      heroCta: 'Schedule your consultation',
+      introEyebrow: 'The firm',
+      introTitle: 'Diverse experience, one cause',
+      intro: [
+        'Diener Law is an immigration law firm serving North Carolina, California, Arizona, and Texas. Our team brings together seven attorneys with different paths — veterans, children of immigrants, former nonprofit advocates — who explain every case in plain language, without jargon.',
+        'From defensive asylum to naturalization, from family petitions to workplace injuries: each attorney brings a specialty, and all share the same commitment to go beyond the call of duty for their clients.',
+      ],
+      ctaTitle: 'Shall we talk about your case?',
+      ctaSub: 'Confidential consultation. We reply within 1 business day.',
+      ctaBtn: 'Schedule a consultation',
+      abogados: [
+        {
+          nombre: 'Richard “Bert” Diener', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['If, as some seem to think, our profession is a constant battle, Bert comes to it particularly well prepared. He served four years in the United States Marine Corps, with tours including Guantánamo Bay (Cuba), Okinawa (Japan), and Camp Lejeune (North Carolina). While earning his law degree at the University of North Carolina at Chapel Hill, he was selected for UNC’s national mock trial team. Both he and fellow attorney Russell Johnson were trial-team teammates in law school and, more than a decade later, have joined forces to fight for the underrepresented. Bert has proven willing to go beyond the call of duty in his efforts to help others. Speaking about his work, he often quotes Texas lawyer Joe Jamail: “if you are not emotionally involved, your client is not getting your best effort”.'],
+          credenciales: ['U.S. Marine Corps veteran (4 years)', 'UNC Chapel Hill — School of Law', 'UNC national mock trial team'],
+          cita: 'We are dedicated to helping immigrants resolve their legal problems',
+        },
+        {
+          nombre: 'Elaine Hartman', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Originally from Ohio, Elaine has lived in North Carolina for more than a decade. While attending the University of North Carolina at Chapel Hill, she was inspired by an acquaintance’s immigration story and decided to attend Carolina Law. She served as a comments editor on the North Carolina Review and took part in the Immigration Clinic. When she is not working as an immigration attorney at Diener Law, she enjoys spending time with friends and family and going shopping.'],
+          credenciales: ['UNC Chapel Hill — Carolina Law', 'North Carolina Review comments editor', 'Immigration Clinic'],
+          cita: 'Proudly serving immigrants from North Carolina to California',
+        },
+        {
+          nombre: 'Russell Johnson', cargo: 'Personal Injury Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Russell Johnson joined Diener Law in 2015 after spending more than a decade as one of the lead litigators at Howard, Stallings, where he focused on serious injury cases and complex commercial litigation. Since then, he has become a Board Certified Specialist in North Carolina Workers’ Compensation Law, and he is also licensed in California, Arizona, and Texas.'],
+          credenciales: ['Board Certified Specialist — Workers’ Compensation (NC)', 'Licensed in CA, AZ & TX', 'At Diener Law since 2015'],
+          cita: 'Immigrants deserve to be compensated for injuries at work and in accidents',
+        },
+        {
+          nombre: 'Italia Lima', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Italia Lima has spent her entire legal career handling matters exclusively in U.S. Immigration and Nationality Law. She attended the University of California-Davis as a pre-law student, graduating on the Dean’s List in 2008 with a Bachelor of Arts. She earned her Juris Doctor from the University of Illinois, Chicago in 2015. During law school, she clerked for the Honorable Judge Elizabeth Loredo (retired). She also helped launch her law school’s first immigration clinic and served as president of the Latino Law Student Association.',
+            'Her experience includes representing clients in family-based immigration matters, asylees and refugees, naturalization, and consular immigration. She has litigated both detained and non-detained cases in immigration courts. She has also handled more complex immigration cases, including motions to reopen and reconsider, appeals before the BIA, and petitions for review in the Ninth Circuit Court of Appeals.',
+            'She has been selected as a Super Lawyers Rising Star for four consecutive years (2022–2025), an honor awarded to the top 2.5% of immigration attorneys in Southern California. She is the proud daughter of Mexican immigrants and the first in her family to attend college and law school in the United States.',
+          ],
+          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., University of Illinois Chicago', 'B.A., UC Davis (Dean’s List 2008)'],
+        },
+        {
+          nombre: 'Kathleen Moscato', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Kathleen “Kat” Moscato was born and raised in Maryland. She completed her undergraduate studies at Boston University from 2007 to 2011, majoring in International Relations and Political Science. She attended Elon University School of Law from 2011 to 2014. During college she fell in love with immigration law and interned with Church World Services, other Catholic charities, and the Charlotte Immigration Court. After graduating in 2014 she began her career at an immigration firm in Charlotte, practicing removal defense and U visa petitions. After the birth of her daughter in 2016 she changed course for seven years, working as a Social Security Disability attorney. With all her children in school, she decided it was time to return to her true love and passion: immigration law. She joined Diener Law in 2023. In her free time she enjoys being a “dance mom” to her three children — Millie, William, and Sloan — and likes running on the treadmill and practicing yoga.'],
+          credenciales: ['Elon University School of Law (2011–2014)', 'At Diener Law since 2023', 'B.A. International Relations, Boston University'],
+        },
+        {
+          nombre: 'Desiree De Jesus-Roman', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Desiree holds a bachelor’s degree in communications from the University of Puerto Rico and a Juris Doctor from its School of Law. She began her legal career in 2014 as a Hearings Officer for a government agency in Puerto Rico and also ran a boutique law firm on the island.',
+            'After the devastation of Hurricane María in September 2017, she closed her practice and moved to the Washington, DC metropolitan area, where she began practicing immigration law. Her struggles after the hurricane and the need to reinvent herself motivated her to develop a passion for helping others achieve their American dream.',
+            'She has worked as an immigration attorney in both the private and nonprofit sectors. She has successfully represented many individuals in defensive and affirmative asylum, adjustment of status, and naturalization. She is a native Spanish speaker and is licensed in Puerto Rico.',
+          ],
+          credenciales: ['J.D., University of Puerto Rico', 'Licensed in Puerto Rico', 'Focus: asylum and adjustment of status'],
+        },
+        {
+          nombre: 'Gabriela Jacob', cargo: 'Attorney', idiomas: ['PORTUGUÊS', 'ENGLISH'],
+          bio: [
+            'Gabriela “Gabi” Jacob began her professional career in her native Brazil, where she worked as a corporate attorney. In 2015 she moved to the United States to study English. She decided to continue her legal career here and earned her Master of Laws (LL.M.) in U.S. Law with magna cum laude honors in 2019. She was admitted to the Washington State Bar in 2020. Before joining Diener Law, she worked as an attorney at a nonprofit organization, where she successfully represented several individuals and their families in defensive asylum cases. She is a native Portuguese speaker and is authorized to practice law in Brazil.',
+            'She lives with her husband Brian, her son Yago, her dog Murph, and two cats, Capi and Mocha. In her free time she enjoys reading horror and suspense novels, hiking, cross-country skiing, and spending time with her family.',
+          ],
+          credenciales: ['LL.M. magna cum laude (2019)', 'Admitted in Washington (2020)', 'Authorized to practice in Brazil'],
+        },
+      ],
+    },
     process: { eyebrow: 'Step by step', title: 'Your immigration process, clear from the start', cta: 'Start your free evaluation' },
     testimonials: { eyebrow: 'Client voices', title: 'Stories from families we have guided', note: 'Testimonials shared with permission. Results vary by case.', stars: 'Rated 5 out of 5 stars' },
     cases: {

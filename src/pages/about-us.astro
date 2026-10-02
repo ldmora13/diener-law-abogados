@@ -1,0 +1,107 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import IconCircle from '../components/IconCircle.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import LawyerCard from '../components/LawyerCard.astro';
+
+import { ui } from '../data/i18n.ts';
+
+import certificateLogo from '../assets/logos/workerscomplaw-2.webp';
+import certificate from '../assets/logos/bcslogo-workerscomplaw-1.webp';
+
+import bertPhoto from '../assets/lawyers/Bert-Diener.webp';
+import elainePhoto from '../assets/lawyers/Elaine-Headshot.webp';
+import russellPhoto from '../assets/lawyers/RWJ-Photo.webp';
+import ItaliaPhoto from '../assets/lawyers/Italia-Lima.webp';
+import KathleenPhoto from '../assets/lawyers/kathleen-moscato.webp';
+import DesireePhoto from '../assets/lawyers/Desiree-de-Jesus.webp';
+import GabrielaPhoto from '../assets/lawyers/Gabriela-Jacob.webp';
+
+
+const t = ui.es.about;
+const callNow = ui.es.callNow;
+const fotos: Record<string, ImageMetadata> = {
+  'Richard “Bert” Diener': bertPhoto,
+  'Elaine Hartman': elainePhoto,
+  'Russell Johnson': russellPhoto,
+  'Italia Lima': ItaliaPhoto,
+  'Kathleen Moscato': KathleenPhoto,
+  'Desiree De Jesus-Roman': DesireePhoto,
+  'Gabriela Jacob': GabrielaPhoto
+};
+---
+
+<Layout
+  title={t.seoTitle}
+  description={t.seoDesc}
+  path="/about-us"
+  altEs="/about-us"
+  altEn="/en/about-us"
+>
+  <Header slot="header" switchHref="/en/about-us" />
+  <Footer slot="footer" />
+
+  {/* Héroe interno */}
+  <section class="bg-counsel-navy">
+    <div data-hero-parallax class="mx-auto max-w-[1200px] px-6 py-16 text-center">
+      <div class="flex justify-center mb-6">
+        <IconCircle size={80} variant="gold" label={t.heroTitle}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </IconCircle>
+      </div>
+      <p class="font-body text-[13px] font-bold uppercase tracking-[0.08em] text-verdict-gold">{t.heroEyebrow}</p>
+      <h1 class="font-heading font-bold text-[32px] md:text-[40px] text-paper mt-3">{t.heroTitle}</h1>
+      <p class="font-body text-[16px] leading-[1.6] text-paper mx-auto max-w-[760px] mt-4">{t.heroSub}</p>
+      <div class="mt-8"><Button href="/#cita">{t.heroCta}</Button></div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-300 px-6 py-16">
+    <nav aria-label="Migas de pan" class="mb-6 font-body text-[14px] text-quiet-slate">
+    <a href="/" class="underline underline-offset-4">{t.crumbHome}</a> <span aria-hidden="true">›</span> <span aria-current="page" class="text-authority-blue font-semibold">{t.crumbHere}</span>
+    </nav>
+    <div class="grid gap-16 md:grid-cols-2 md:gap-24">
+      <div>
+        <SectionHeading eyebrow={t.introEyebrow} title={t.introTitle} align="left" />
+        <div class="max-w-[760px] -mt-6">
+          {t.intro.map((p) => (<p data-reveal class="font-body text-[16px] leading-[1.6] mt-4">{p}</p>))}
+        </div>
+      </div>
+      <div class="max-w-[760px] items-center justify-center flex">
+        <Image src={certificate} alt="Certificado" />
+    </div>
+    </div>
+    
+    
+    
+  </div>
+
+  {/* Equipo */}
+  <section class="bg-parchment">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start">
+        {t.abogados.map((a) => (
+          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} cita={a.cita} foto={fotos[a.nombre]} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* CTA */}
+  <section class="bg-justice-blue">
+    <div class="mx-auto max-w-[760px] px-6 py-16 text-center">
+      <h2 data-reveal class="font-heading font-semibold text-[30px] text-paper">{t.ctaTitle}</h2>
+      <p data-reveal class="font-body text-[16px] text-paper mt-3">{t.ctaSub}</p>
+      <div data-reveal class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/#cita">{t.ctaBtn}</Button>
+        <Button variant="secondary-dark" href="tel:+19195550100">{callNow}</Button>
+      </div>
+    </div>
+  </section>
+</Layout>

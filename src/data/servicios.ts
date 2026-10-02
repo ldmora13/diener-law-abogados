@@ -10,7 +10,7 @@ export const servicios: Servicio[] = [
     slug: 'visas-familiares',
     titulo: 'Visas familiares',
     icono: 'users',
-    descripcion: 'Peticiones I-130 para cónyuge, hijos y padres. Le explicamos el ajuste de estatus y los pasos ante USCIS.',
+    descripcion: 'Solicitudes para cónyuge o prometido, hijos y padres. Le explicamos el ajuste de estatus y los pasos ante USCIS.',
   },
   {
     slug: 'visas-trabajo',

@@ -10,10 +10,11 @@ const { lang = 'es', base = '', switchHref = '/en' } = Astro.props;
 const t = ui[lang];
 const nav = [
   { href: `${base}#inicio`, label: t.nav.home },
-  { href: `${base}#por-que`, label: t.nav.why },
   { href: `${base}#servicios`, label: t.nav.immigration },
-  { href: `${base}#faq`, label: t.nav.learn },
+  { href: `${base}#por-que`, label: t.nav.why },
+  { href: `${base}#proceso`, label: t.nav.learn },
   { href: `${base}#cita`, label: t.nav.contact },
+  { href: `${base}/about-us`, label: t.nav.about }
 ];
 const toggleLabel = lang === 'es' ? 'EN' : 'ES';
 ---
