@@ -5,7 +5,6 @@ import Footer from '../../components/Footer.astro';
 import Button from '../../components/Button.astro';
 import IconCircle from '../../components/IconCircle.astro';
 import AppointmentForm from '../../components/AppointmentForm.tsx';
-import ChatWidget from '../../components/ChatWidget.tsx';
 import { detalleServicios } from '../../data/detalle-servicios.ts';
 import { faqSchema, breadcrumbSchema } from '../../data/schemas.ts';
 
@@ -137,5 +136,4 @@ if (!servicio) throw new Error(`Servicio no encontrado: ${slug}`);
     </div>
   </section>
 
-  <ChatWidget client:visible />
 </Layout>
