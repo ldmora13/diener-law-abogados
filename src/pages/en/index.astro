@@ -40,7 +40,7 @@ const fotos: Record<string, ImageMetadata> = {
   <section id="servicios" class="bg-paper">
     <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
       <SectionHeading eyebrow={t.services.eyebrow} title={t.services.title} />
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {serviciosEn.map((s) => (
           <ServiceCard titulo={s.titulo} descripcion={s.descripcion} icono={s.icono} href={`/en/services/${s.slug}`} more={t.services.more} />
         ))}
@@ -129,7 +129,7 @@ const fotos: Record<string, ImageMetadata> = {
         <h2 class="font-heading font-semibold text-[30px] lg:text-[40px] text-paper">{t.cita.title}</h2>
         <p class="font-body text-[20px] font-semibold text-paper mt-3">{t.cita.subtitle}</p>
         <ul class="mt-6 space-y-3 font-body text-[16px] text-paper">
-          <li><a href="tel:+19195550100" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">📞 (888) 574-1286</a></li>
+          <li><a href="tel:+18885741286" class="underline underline-offset-4 min-h-[44px] inline-flex items-center">+1 (863) 227-1367</a></li>
           <li>{t.cita.hours}</li>
           <li>{t.cita.areas}</li>
         </ul>
@@ -139,7 +139,7 @@ const fotos: Record<string, ImageMetadata> = {
         <p class="font-body text-[16px] mt-2">{t.about.ctaSub}</p>
         <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
           <Button openCita>{t.about.ctaBtn}</Button>
-          <Button variant="secondary" href="tel:+19195550100">{t.callNow}</Button>
+          <Button variant="secondary" href="tel:+18885741286">{t.callNow}</Button>
         </div>
       </div>
     </div>

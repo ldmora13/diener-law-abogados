@@ -18,10 +18,10 @@ export default function CitaModal({ lang = 'es' }: { lang?: Lang }) {
     requestAnimationFrame(() => requestAnimationFrame(() => setOpen(true)));
   }, []);
 
+  // El panel conserva su estado al cerrar: un toque accidental en el velo o Escape no borra el formulario.
   const doClose = useCallback(() => {
     setOpen(false);
     window.setTimeout(() => {
-      setMounted(false);
       opener.current?.focus?.();
     }, 320);
   }, []);
@@ -42,9 +42,9 @@ export default function CitaModal({ lang = 'es' }: { lang?: Lang }) {
     };
   }, [doOpen]);
 
-  // Escape + trampa de foco sencilla dentro del diálogo.
+  // Escape + trampa de foco sencilla dentro del diálogo (solo mientras está abierto).
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || !open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         doClose();
@@ -67,11 +67,11 @@ export default function CitaModal({ lang = 'es' }: { lang?: Lang }) {
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [mounted, doClose]);
+  }, [mounted, open, doClose]);
 
-  // Bloqueo de scroll + foco inicial.
+  // Bloqueo de scroll + foco inicial (solo mientras está abierto).
   useEffect(() => {
-    if (!mounted) return;
+    if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     const id = window.setTimeout(() => closeRef.current?.focus(), 80);
@@ -79,12 +79,12 @@ export default function CitaModal({ lang = 'es' }: { lang?: Lang }) {
       document.body.style.overflow = prev;
       window.clearTimeout(id);
     };
-  }, [mounted]);
+  }, [open]);
 
   if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[150] flex items-end sm:items-center justify-center sm:p-6" role="presentation">
+    <div className="fixed inset-0 z-[150] flex items-end sm:items-center justify-center sm:p-6" role="presentation" inert={!open} aria-hidden={!open || undefined}>
       {/* Velo */}
       <div
         aria-hidden="true"

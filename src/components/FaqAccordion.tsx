@@ -29,6 +29,7 @@ export default function FaqAccordion({ items, lang = 'es', citaHref = '#contacto
               id={`faq-panel-${i}`}
               role="region"
               aria-labelledby={`faq-btn-${i}`}
+              inert={!isOpen}
               className={`grid transition-[grid-template-rows] duration-[250ms] ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
             >
               <div className="overflow-hidden">
