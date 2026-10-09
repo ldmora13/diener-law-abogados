@@ -5,8 +5,8 @@ export const ui = {
   es: {
     skip: 'Saltar al contenido',
     nav: { home: 'Inicio', why: 'Por qué Diener Law', immigration: 'Inmigración', learn: 'Infórmate', contact: 'Contáctenos', about: 'Nuestro equipo' },
-    call: 'Llamar',
-    callNow: 'Llamar ahora',
+    call: 'Contactar',
+    callNow: 'Contactar ahora',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
     hero: {
@@ -14,7 +14,7 @@ export const ui = {
       title: '¿Tienes preguntas sobre tu caso de inmigración?',
       subtitle: 'Hablamos tu idioma y luchamos por tu familia',
       para: 'Somos un despacho de inmigración en Carolina del Norte, California, Arizona y Texas. Te explicamos tus opciones para visas, green card, ciudadanía y defensa, con trato cercano y pasos claros.',
-      cta: 'Agenda tu consulta',
+      cta: 'Contactar ahora',
       note: 'Consulta confidencial. Respondemos en 1 día hábil.',
     },
     services: { eyebrow: 'Cómo te ayudamos', title: 'Casos de inmigración con los que te podemos ayudar', more: 'Saber más' },
@@ -35,7 +35,7 @@ export const ui = {
       heroEyebrow: 'Nuestro equipo',
       heroTitle: 'Abogados que luchan por tu familia',
       heroSub: 'Siete abogados con raíces inmigrantes, experiencia en tribunales y trato cercano en tu idioma.',
-      heroCta: 'Agenda tu consulta',
+      heroCta: 'Contactar ahora',
       introEyebrow: 'El despacho',
       introTitle: 'Experiencia diversa, una misma causa',
       intro: [
@@ -44,7 +44,7 @@ export const ui = {
       ],
       ctaTitle: '¿Hablamos de tu caso?',
       ctaSub: 'Consulta confidencial. Respondemos en 1 día hábil.',
-      ctaBtn: 'Agendar consulta',
+      ctaBtn: 'Contactar ahora',
       abogados: [
         {
           nombre: 'Richard “Bert” Diener', cargo: 'CEO y abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -120,19 +120,19 @@ export const ui = {
     cita: { title: 'Habla con un abogado de inmigración', subtitle: 'Consulta confidencial. Respondemos en 1 día hábil.', hours: 'Lun–Vie 9:00–18:00 · Español e inglés', areas: 'NC · CA · AZ · TX' },
     chat: {
       title: '¿En qué te ayudamos?', text: 'Escríbenos y te respondemos en horario de oficina. Para urgencias de detención, llama de inmediato.',
-      call: 'Llamar ahora', badge: 'Chatea conmigo ahora', open: 'Abrir chat de ayuda', close: 'Cerrar chat', dialog: 'Chat de ayuda',
+      call: 'Contactar ahora', badge: 'Chatea conmigo ahora', open: 'Abrir chat de ayuda', close: 'Cerrar chat', dialog: 'Chat de ayuda',
     },
     footer: {
       tagline: 'Despacho de inmigración que acompaña a familias y trabajadores en cada etapa de su caso.',
       services: 'Servicios', offices: 'Oficinas', contact: 'Contacto',
       contactText: 'Atención en español e inglés.',
-      schedule: 'Agendar consulta',
+      schedule: 'Contactar',
       privacyLink: 'Política de privacidad',
       legal: 'Publicidad de abogados. Los resultados anteriores no garantizan un resultado similar. Enviar este formulario no crea una relación abogado-cliente.',
-      callTab: 'Llamar', consultTab: 'Consulta',
+      callTab: 'Contactar', consultTab: 'Consulta',
     },
     form: {
-      modalEyebrow: 'Consulta confidencial', modalTitle: 'Agenda tu consulta', modalSub: 'Completa tus datos y un abogado se pondrá en contacto contigo en 1 día hábil.', close: 'Cerrar modal',
+      modalEyebrow: 'Consulta confidencial', modalTitle: 'Contactar ahora', modalSub: 'Completa tus datos y un abogado se pondrá en contacto contigo en 1 día hábil.', close: 'Cerrar modal',
       noscript: 'Para agendar tu consulta, llámanos al',
       name: 'Nombre(s)', lastName: 'Apellidos', phone: 'Teléfono', email: 'Correo electrónico', state: 'Estado de interés', case: 'Tipo de caso',
       status: 'Situación migratoria actual', urgency: '¿Hay algo urgente en tu caso?',
@@ -207,7 +207,7 @@ export const ui = {
         },
         {
           h: 'Preguntas, comentarios e inquietudes',
-          p: ['Si tienes alguna pregunta sobre el contenido de esta página, o simplemente deseas comunicarte con nosotros por cualquier otro motivo, puedes llamarnos al +1 (863) 227-1367.'],
+          p: ['Si tienes alguna pregunta sobre el contenido de esta página, o simplemente deseas comunicarte con nosotros por cualquier otro motivo, puedes Contactarnos al +1 (863) 227-1367.'],
         },
       ],
     },
@@ -215,8 +215,8 @@ export const ui = {
   en: {
     skip: 'Skip to content',
     nav: { home: 'Home', why: 'Why Diener Law', immigration: 'Immigration', learn: 'Learn', contact: 'Contact Us', about: 'Our Team' },
-    call: 'Call',
-    callNow: 'Call now',
+    call: 'Contact',
+    callNow: 'Contact now',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     hero: {
@@ -224,7 +224,7 @@ export const ui = {
       title: 'Questions about your immigration case?',
       subtitle: 'We speak your language and fight for your family',
       para: 'We are an immigration law firm in North Carolina, California, Arizona, and Texas. We explain your options for visas, green cards, citizenship, and defense — with personal attention and clear steps.',
-      cta: 'Schedule your consultation',
+      cta: 'Contact now',
       note: 'Confidential consultation. We reply within 1 business day.',
     },
     services: { eyebrow: 'How we help', title: 'Immigration cases we can help you with', more: 'Learn more' },
@@ -245,7 +245,7 @@ export const ui = {
       heroEyebrow: 'Our team',
       heroTitle: 'Attorneys who fight for your family',
       heroSub: 'Seven attorneys with immigrant roots, courtroom experience, and personal attention in your language.',
-      heroCta: 'Schedule your consultation',
+      heroCta: 'Contact now',
       introEyebrow: 'The firm',
       introTitle: 'Diverse experience, one cause',
       intro: [
@@ -254,7 +254,7 @@ export const ui = {
       ],
       ctaTitle: 'Shall we talk about your case?',
       ctaSub: 'Confidential consultation. We reply within 1 business day.',
-      ctaBtn: 'Schedule a consultation',
+      ctaBtn: 'Contact now',
       abogados: [
         {
           nombre: 'Richard “Bert” Diener', cargo: 'CEO & Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -336,14 +336,14 @@ export const ui = {
       tagline: 'An immigration law firm guiding families and workers through every stage of their case.',
       services: 'Services', offices: 'Offices', contact: 'Contact',
       contactText: 'Se habla español. Service in Spanish and English.',
-      schedule: 'Schedule a consultation',
+      schedule: 'Contact now',
       privacyLink: 'Privacy policy',
       legal: 'Attorney advertising. Prior results do not guarantee a similar outcome. Submitting this form does not create an attorney-client relationship.',
       callTab: 'Call', consultTab: 'Consult',
     },
     form: {
-      modalEyebrow: 'Confidential consultation', modalTitle: 'Schedule your consultation', modalSub: 'Share your details and an attorney will contact you within 1 business day.', close: 'Close dialog',
-      noscript: 'To schedule your consultation, call us at',
+      modalEyebrow: 'Confidential consultation', modalTitle: 'Contact now', modalSub: 'Share your details and an attorney will contact you within 1 business day.', close: 'Close dialog',
+      noscript: 'To contact now, call us at',
       name: 'First name', lastName: 'Last name', phone: 'Phone', email: 'Email', state: 'State of interest', case: 'Case type',
       status: 'Current immigration status', urgency: 'Is anything urgent in your case?',
       statusOpts: ['U.S. citizen', 'Permanent resident', 'Valid visa', 'Other status', 'Prefer not to say'],
