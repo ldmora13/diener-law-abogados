@@ -8,7 +8,7 @@ const scheduleWith = ui[lang].team.scheduleWith;
 const portraitOf = ui[lang].about.portraitOf;
 const paras = Array.isArray(bio) ? bio : [bio];
 ---
-<article data-reveal class="card-lift bg-paper border border-mist rounded-[4px] p-6">
+<article data-reveal class="card-lift bg-paper border border-mist rounded-[4px] p-6 h-full">
   <div class="bg-parchment rounded-[4px] aspect-[4/5] overflow-hidden flex items-center justify-center font-heading text-[40px] text-authority-blue" role="img" aria-label={`${portraitOf} ${nombre}`}>
     {foto ? (
       <Image src={foto} alt={`${portraitOf} ${nombre}`} class="h-full w-full object-cover" />

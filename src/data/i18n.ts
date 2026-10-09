@@ -47,10 +47,31 @@ export const ui = {
       ctaBtn: 'Agendar consulta',
       abogados: [
         {
-          nombre: 'Richard “Bert” Diener', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          nombre: 'Richard “Bert” Diener', cargo: 'CEO y abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
           bio: ['Bert sirvió por cuatro años en el Cuerpo de Marines de Estados Unidos, con destinos en la Bahía de Guantánamo (Cuba), Okinawa (Japón) y Camp Lejeune. Mientras obtenía su título de abogado en la Universidad de Carolina del Norte en Chapel Hill, fue seleccionado para el equipo nacional de juicio simulado de UNC. Bert ha demostrado estar dispuesto a ir más allá del deber en sus esfuerzos por ayudar a los demás.'],
           credenciales: ['Veterano del Cuerpo de Marines de EE. UU. (4 años)', 'UNC Chapel Hill — Facultad de Derecho', 'Equipo nacional de juicio simulado de UNC'],
           cita: 'Estamos dedicados a ayudar a los inmigrantes a resolver sus problemas legales',
+        },
+        {
+          nombre: 'Carlos Alberto Mejia', cargo: 'Asociado senior · Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio:[ 
+            'Carlos Alberto Mejia es un abogado de inmigración con experiencia en la representación de clientes en una variedad de asuntos de inmigración, incluyendo peticiones familiares, visas de trabajo, asilo y defensa contra la deportación. Se graduó de la Escuela de Abogados de California y ha trabajado en organizaciones sin fines de lucro que brindan asistencia legal a inmigrantes.',
+            'Carlos es un defensor apasionado de los derechos de los inmigrantes y se esfuerza por proporcionar asistencia legal de calidad a aquellos que lo necesitan.'
+          ],
+          credenciales: ['Graduado de la Escuela de Abogados de California', 'Especialista en derecho migratorio, finanzas y litigios ante cortes'],
+        },
+        {
+          nombre: 'Christine Meredith Lester', cargo: 'Asociada senior · Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Christine Meredith Lester es abogada certificada en derecho de inmigración y defensa de inmigrantes. Tiene más de 10 años de experiencia en la representación legal de clientes en una variedad de asuntos de inmigración.', 'Christine ha trabajado en organizaciones sin fines de lucro y en bufetes de abogados privados, brindando asistencia legal a inmigrantes en casos de asilo, peticiones familiares, visas de trabajo y defensa contra la deportación.'],
+          credenciales: ['Abogada de la Escuela de Abogados de California', 'Especialista en derecho migratorio, finanzas y litigios ante cortes'],
+        },
+        {
+          nombre: 'Italia Lima', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Recibió su título de Juris Doctor de la Universidad de Illinois, Chicago en 2015. Mientras estudiaba Derecho, trabajó como asistente judicial de la Honorable Jueza Elizabeth Loredo (retirada). También ayudó a inaugurar la primera clínica de inmigración de su escuela de derecho y se desempeñó como presidenta de la Asociación de Estudiantes de Derecho Latino.',
+            'Ha sido seleccionada como Estrella en Ascenso de Super Lawyers durante cuatro años consecutivos (2022 a 2025), un honor otorgado al 2.5% superior de los abogados de inmigración en el sur de California. Es hija orgullosa de inmigrantes mexicanos y la primera en su familia en asistir a la universidad y a la escuela de leyes en los Estados Unidos.',
+          ],
+          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., Universidad de Illinois Chicago'],
         },
         {
           nombre: 'Elaine Hartman', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -63,14 +84,6 @@ export const ui = {
           bio: ['Russell Johnson se unió a Diener Law en 2015 después de pasar más de una década como uno de los litigantes principales en Howard, Stallings, donde se centró en casos de lesiones graves y litigios comerciales complejos. Desde entonces, se ha convertido en Especialista Certificado por la Junta en Ley de Compensación Laboral en Carolina del Norte, además de estar licenciado en California, Arizona y Texas.'],
           credenciales: ['Especialista Certificado — Compensación Laboral (NC)', 'Licenciado en CA, AZ y TX', 'En Diener Law desde 2015'],
           cita: 'Los inmigrantes merecen ser compensados por lesiones en el trabajo y por accidente',
-        },
-        {
-          nombre: 'Italia Lima', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
-          bio: [
-            'Italia Lima ha pasado toda su carrera legal manejando asuntos exclusivamente en el área de la Ley de Inmigración y Nacionalidad de los Estados Unidos. Asistió a la Universidad de California-Davis como estudiante de pre-derecho, graduándose en la Lista del Decano en 2008 con una Licenciatura en Artes. Recibió su título de Juris Doctor de la Universidad de Illinois, Chicago en 2015. Mientras estudiaba Derecho, trabajó como asistente judicial de la Honorable Jueza Elizabeth Loredo (retirada). También ayudó a inaugurar la primera clínica de inmigración de su escuela de derecho y se desempeñó como presidenta de la Asociación de Estudiantes de Derecho Latino.',
-            'Ha sido seleccionada como Estrella en Ascenso de Super Lawyers durante cuatro años consecutivos (2022 a 2025), un honor otorgado al 2.5% superior de los abogados de inmigración en el sur de California. Es hija orgullosa de inmigrantes mexicanos y la primera en su familia en asistir a la universidad y a la escuela de leyes en los Estados Unidos.',
-          ],
-          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., Universidad de Illinois Chicago'],
         },
         {
           nombre: 'Kathleen Moscato', cargo: 'Abogado', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -244,10 +257,31 @@ export const ui = {
       ctaBtn: 'Schedule a consultation',
       abogados: [
         {
-          nombre: 'Richard “Bert” Diener', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          nombre: 'Richard “Bert” Diener', cargo: 'CEO & Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
           bio: ['Bert served for four years in the United States Marine Corps, with postings in Guantanamo Bay (Cuba), Okinawa (Japan), and Camp Lejeune. While earning his law degree at the University of North Carolina at Chapel Hill, he was selected for the UNC national mock trial team. Bert has demonstrated a willingness to go above and beyond the call of duty in his efforts to help others.'],
           credenciales: ['U.S. Marine Corps veteran (4 years)', 'UNC Chapel Hill — School of Law', 'UNC national mock trial team'],
           cita: 'We are dedicated to helping immigrants resolve their legal problems',
+        },
+        {
+          nombre: 'Carlos Alberto Mejia', cargo: 'Attorney senior · lawyer', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio:[ 
+            'Carlos Alberto Mejia is an immigration attorney experienced in representing clients in a variety of immigration matters, including family-based petitions, work visas, asylum, and deportation defense. He graduated from California Law School and has worked with non-profit organizations that provide legal assistance to immigrants.',
+            'Carlos is a passionate advocate for immigrant rights and strives to provide quality legal assistance to those in need.'
+          ],
+          credenciales: ['Graduated from California Law School', 'Specialist in immigration law, finance, and court litigation'],
+        },
+        {
+          nombre: 'Christine Meredith Lester', cargo: 'Attorney senior · lawyer', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: ['Christine Meredith Lester is an immigration attorney certified in immigration law and immigrant defense. She has over 10 years of experience representing clients in a variety of immigration matters.', 'Christine has worked with non-profit organizations and private law firms, providing legal assistance to immigrants in asylum cases, family-based petitions, work visas, and deportation defense.'],
+          credenciales: ['Attorney from the California School of Law', 'Specialist in immigration law, finance, and court litigation'],
+        },
+        {
+          nombre: 'Italia Lima', cargo: 'Attorney senior · lawyer', idiomas: ['ESPAÑOL', 'ENGLISH'],
+          bio: [
+            'Her experience includes representing clients in family-based immigration matters, asylees and refugees, naturalization, and consular immigration.',
+            'She has been selected as a Super Lawyers Rising Star for four consecutive years (2022–2025), an honor awarded to the top 2.5% of immigration attorneys in Southern California. She is the proud daughter of Mexican immigrants and the first in her family to attend college and law school in the United States.',
+          ],
+          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., University of Illinois Chicago'],
         },
         {
           nombre: 'Elaine Hartman', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
@@ -260,15 +294,6 @@ export const ui = {
           bio: ['Russell Johnson joined Diener Law in 2015 after spending more than a decade as one of the lead litigators at Howard, Stallings, where he focused on serious injury cases and complex commercial litigation. Since then, he has become a Board Certified Specialist in North Carolina Workers’ Compensation Law, and he is also licensed in California, Arizona, and Texas.'],
           credenciales: ['Board Certified Specialist — Workers’ Compensation (NC)', 'Licensed in CA, AZ & TX', 'At Diener Law since 2015'],
           cita: 'Immigrants deserve to be compensated for injuries at work and in accidents',
-        },
-        {
-          nombre: 'Italia Lima', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-          bio: [
-            'Italia Lima has spent her entire legal career handling matters exclusively in U.S. Immigration and Nationality Law. She attended the University of California-Davis as a pre-law student, graduating on the Dean’s List in 2008 with a Bachelor of Arts. She earned her Juris Doctor from the University of Illinois, Chicago in 2015. During law school, she clerked for the Honorable Judge Elizabeth Loredo (retired). She also helped launch her law school’s first immigration clinic and served as president of the Latino Law Student Association.',
-            'Her experience includes representing clients in family-based immigration matters, asylees and refugees, naturalization, and consular immigration.',
-            'She has been selected as a Super Lawyers Rising Star for four consecutive years (2022–2025), an honor awarded to the top 2.5% of immigration attorneys in Southern California. She is the proud daughter of Mexican immigrants and the first in her family to attend college and law school in the United States.',
-          ],
-          credenciales: ['Super Lawyers Rising Star 2022–2025', 'J.D., University of Illinois Chicago'],
         },
         {
           nombre: 'Kathleen Moscato', cargo: 'Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],

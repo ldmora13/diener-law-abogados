@@ -1,6 +1,7 @@
 import bertDienerPhoto from '../assets/lawyers/Bert-Diener.webp';
-import ElainePhoto from '../assets/lawyers/Elaine-Headshot.webp'
-import RussellPhoto from '../assets/lawyers/RWJ-Photo.webp'
+import ChristinePhoto from '../assets/lawyers/Christine-Meredith.webp'
+import CarlosPhoto from '../assets/lawyers/Carlos-Mejia.webp'
+import ItaliaPhoto from '../assets/lawyers/Italia-Lima.webp'
 
 export interface Abogado {
   nombre: string;
@@ -14,28 +15,27 @@ export interface Abogado {
 
 export const abogados: Abogado[] = [
   {
-    nombre: 'Richard “Bert” Diener',
-    cargo: 'Fundador · Abogado',
-    idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Más de 20 años acompañando a familias en peticiones familiares, naturalización y defensa.',
-    credenciales: ['Abogado de la Universidad de Carolina del Norte en Chapel Hill', 'Miembro de la Selección Nacional de Primera UNC'],
-    foto: bertDienerPhoto,
-    destacado: true,
-  },
-  {
-    nombre: 'Elaine Hartman',
+    nombre: 'Christine Meredith Lester',
     cargo: 'Asociada senior · Abogado',
     idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Enfocada en visas de trabajo y ajuste de estatus. Explica cada formulario en lenguaje claro.',
-    credenciales: ['Abogado de la Universidad de Carolina del Norte en Chapel Hill ', 'Editora en North Carolina Review'],
-    foto: ElainePhoto
+    bio: 'Especialista en derecho migratorio, fianzas y letigios ante corte.',
+    credenciales: ['Abogado de la Escuela de Abogados de California'],
+    foto: ChristinePhoto
   },
   {
-    nombre: 'Russell Johnson',
-    cargo: 'Asociado senior · Abogado de Lesiones Personales',
+    nombre: 'Carlos Alberto Mejia',
+    cargo: 'Asociado senior · Abogado',
     idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Especialista Certificado por la Junta en Ley de Compensación Laboral en Carolina del Norte, además de estar licenciado en California, Arizona y Texas.',
-    credenciales: ['Editor Ejecutivo de la Revista de Derecho de la Primera Enmienda', 'Miembro de la Sociedad de Honor Nacional Golden Key'],
-    foto: RussellPhoto
+    bio: 'Especialista en derecho migratorio, fianzas y litigios ante corte, además de estar licenciado en California, Arizona y Texas.',
+    credenciales: ['Graduado de la Escuela de Abogados de California.', 'Miembro de la Sociedad de Honor Nacional Golden Key'],
+    foto: CarlosPhoto
+  },
+  {
+    nombre: 'Italia M. Lima ',
+    cargo: 'Asociada senior · Abogado',
+    idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'Especialista en derecho migratorio, fianzas y letigios ante corte.',
+    credenciales: ['Graduada de la Escuela de Abogados de California'],
+    foto: ItaliaPhoto
   },
 ];

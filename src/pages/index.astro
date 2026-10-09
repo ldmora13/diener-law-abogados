@@ -21,6 +21,7 @@ import { casos, stats } from '../data/casos.ts';
 import { faqSchema } from '../data/schemas.ts';
 
 import certificate from '../assets/logos/bcslogo2.png'
+import BertDienerPhoto from '../assets/lawyers/Bert-Diener.webp'
 ---
 
 <Layout path="/" altEs="/" altEn="/en/" schemas={[faqSchema(faqs)]}>
@@ -67,9 +68,31 @@ import certificate from '../assets/logos/bcslogo2.png'
   <section id="equipo" class="bg-paper">
     <div class="mx-auto max-w-[1200px] px-6 py-16 lg:py-24">
       <SectionHeading eyebrow="Nuestro equipo" title="Abogados que luchan por tu familia" />
-      <div class="grid gap-6 md:grid-cols-3">
+      
+      <div class="grid gap-6 md:grid-cols-3 items-stretch">
+        <article class="card-lift bg-paper border border-mist rounded-[4px] p-6 md:col-span-3 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-8">
+          <div class="bg-parchment rounded-[4px] aspect-[4/5] overflow-hidden flex items-center justify-center font-heading text-[40px] text-authority-blue" role="img" aria-label="Foto de Bert Diener">
+            <img src={BertDienerPhoto.src} alt="Bert Diener" class="h-full w-full object-cover" />
+          </div>
+          <div class="mt-5 lg:mt-0 lg:flex lg:flex-col lg:justify-center">
+            <h3 class="font-heading font-semibold text-[24px] text-authority-blue">Bert Diener</h3>
+            <p class="font-body text-[14px] font-semibold text-quiet-slate mt-1">Fundador · Abogado</p>
+            <p class="flex gap-2 mt-3"><span class="bg-sky-mist text-authority-blue font-body text-[12px] font-bold px-2 py-1 rounded-[4px]">ESPAÑOL</span><span class="bg-sky-mist text-authority-blue font-body text-[12px] font-bold px-2 py-1 rounded-[4px]">ENGLISH</span></p>
+            <p class="font-body text-[15px] leading-[1.6] mt-3">Más de 20 años acompañando a familias en peticiones familiares, naturalización y defensa.</p>
+            <ul class="mt-3 space-y-1">
+              <li class="font-body text-[14px] text-quiet-slate flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2e7d5b" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Abogado de la Universidad de Carolina del Norte en Chapel Hill
+              </li>
+              <li class="font-body text-[14px] text-quiet-slate flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2e7d5b" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Miembro de la Selección Nacional de Primera UNC
+              </li>
+            </ul>
+          </div>
+        </article>
         {abogados.map((a) => (
-          <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} foto={a.foto} destacado={a.destacado} />
+          <div class="h-full">
+            <LawyerCard nombre={a.nombre} cargo={a.cargo} idiomas={a.idiomas} bio={a.bio} credenciales={a.credenciales} foto={a.foto} destacado={a.destacado} />
+          </div>
         ))}
       </div>
     </div>
