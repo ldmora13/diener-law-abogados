@@ -169,31 +169,35 @@ body {
 ::selection { background: var(--color-verdict-gold); color: var(--color-counsel-navy); }
 
 /* Premium corporate — hovers/transitions (≤200ms, solo transform/color/borde, sin sombras) */
-.btn-primary { transition: background 200ms ease-out, transform 200ms ease-out; }
-.btn-primary:hover { transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); }
-.btn-secondary { transition: background 200ms ease-out, color 200ms ease-out, transform 200ms ease-out; }
-.btn-secondary:hover { transform: translateY(-1px); }
-.btn-secondary:active { transform: translateY(0); }
+.btn-primary { transition: background 200ms ease-out, transform 160ms ease-out; }
+.btn-secondary { transition: background 200ms ease-out, color 200ms ease-out, transform 160ms ease-out; }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-secondary:hover { transform: translateY(-1px); }
+  .link-arrow:hover { text-decoration-color: var(--color-authority-blue); }
+  .link-arrow:hover > span { transform: translateX(4px); }
+  .card-lift:hover { transform: translateY(-4px); border-color: var(--color-authority-blue); }
+  li:hover > .timeline-dot { background-color: var(--color-counsel-navy); transform: scale(1.06); }
+  [data-chat] > button:hover { transform: scale(1.04); background-color: var(--color-authority-blue); }
+  footer a:not(.bg-verdict-gold):hover { color: var(--color-verdict-gold); }
+}
+.btn-primary:active { transform: scale(0.97); }
+.btn-secondary:active { transform: scale(0.97); }
 
 /* Enlace terciario: la flecha avanza al hover */
 .link-arrow { transition: color 200ms ease-out, text-decoration-color 200ms ease-out; }
-.link-arrow:hover { text-decoration-color: var(--color-authority-blue); }
 .link-arrow > span { display: inline-block; transition: transform 200ms ease-out; }
-.link-arrow:hover > span { transform: translateX(4px); }
 
 /* Elevación por traslado — tarjetas (DESIGN.md: -4px, sin sombra) */
 .card-lift { transition: transform 200ms ease-out, border-color 200ms ease-out; }
-.card-lift:hover { transform: translateY(-4px); border-color: var(--color-authority-blue); }
 
 /* Nav header/footer/aside: transiciones suaves de color y borde */
 #site-header nav a { transition: border-color 200ms ease-out, color 200ms ease-out, background-color 200ms ease-out; }
 footer a { transition: color 200ms ease-out, text-decoration-color 200ms ease-out; }
-footer a:not(.bg-verdict-gold):hover { color: var(--color-verdict-gold); }
 aside nav a { transition: border-color 200ms ease-out, color 200ms ease-out; }
 
 /* Campos: borde responde al hover, foco intacto (DESIGN.md) */
-input, select, textarea { transition: border-color 200ms ease-out, box-shadow 200ms ease-out; }
+input, select, textarea { transition: border-color 200ms ease-out; }
 input:hover:not(:focus), select:hover:not(:focus), textarea:hover:not(:focus) { border-color: var(--color-authority-blue); }
 
 /* FAQ: fila responde al hover, icono con micro-rotación al abrir */
@@ -204,11 +208,9 @@ input:hover:not(:focus), select:hover:not(:focus), textarea:hover:not(:focus) { 
 
 /* Timeline: el paso gana presencia al hover */
 .timeline-dot { transition: background-color 200ms ease-out, transform 200ms ease-out; }
-li:hover > .timeline-dot { background-color: var(--color-counsel-navy); transform: scale(1.06); }
 
 /* Chat: el botón respira al hover */
 [data-chat] > button { transition: transform 200ms ease-out, background-color 200ms ease-out; }
-[data-chat] > button:hover { transform: scale(1.04); background-color: var(--color-authority-blue); }
 
 /* Sin sombras globales salvo chat */
 .chat-shadow { box-shadow: 0 4px 16px rgba(17, 28, 56, 0.25); }
@@ -221,6 +223,12 @@ li:hover > .timeline-dot { background-color: var(--color-counsel-navy); transfor
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    /* Comprensión intacta (opacity/color), sin desplazamiento */
+    transition-property: opacity, color, background-color, border-color, text-decoration-color !important;
+    transition-duration: 0.2s !important;
+  }
+  [data-hero], [data-reveal], [data-hero-media], [data-hero-parallax] {
+    transform: none !important;
   }
 }

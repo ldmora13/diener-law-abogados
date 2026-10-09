@@ -13,8 +13,8 @@ const radioCard = 'inline-flex items-center gap-2 font-body text-[15px] min-h-[4
 function F({ i, on, wide, children }: { i: number; on: boolean; wide?: boolean; children: ReactNode }) {
   return (
     <div
-      className={`${wide ? 'md:col-span-2' : ''} transition-all duration-300 ease-out ${on ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
-      style={{ transitionDelay: on ? `${60 + i * 45}ms` : '0ms' }}
+      className={`${wide ? 'md:col-span-2' : ''} transition-[transform,opacity] duration-250 ease-out ${on ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+      style={{ transitionDelay: on ? `${Math.min(60 + i * 45, 300)}ms` : '0ms' }}
     >
       {children}
     </div>

@@ -97,7 +97,7 @@ export default function CitaModal({ lang = 'es' }: { lang?: Lang }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="cita-modal-title"
-        className={`relative w-full sm:max-w-[640px] max-h-[92dvh] flex flex-col bg-paper rounded-t-[4px] sm:rounded-[4px] overflow-hidden transition-all duration-300 ease-out ${open ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-[0.98]'}`}
+        className={`relative w-full sm:max-w-[640px] max-h-[92dvh] flex flex-col bg-paper rounded-t-[4px] sm:rounded-[4px] overflow-hidden transition-[transform,opacity] duration-300 ease-out ${open ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-[0.98]'}`}
       >
         {/* Cabecera institucional */}
         <div className="bg-counsel-navy px-6 py-5 pr-16 shrink-0">

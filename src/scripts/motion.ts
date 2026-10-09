@@ -1,5 +1,5 @@
 // Motion global — Diener Law.
-// Corporate sobrio: una sola firma (power2.out), reveals de 12px/400ms según DESIGN.md.
+// Corporate sobrio: una sola firma (power2.out), reveals de 12px/250ms.
 // Solo transform + autoAlpha. Sin JS = contenido visible (gsap.from, progressive enhancement).
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,9 +16,10 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
     gsap.from(heroItems, {
       y: 12,
       autoAlpha: 0,
-      duration: 0.4,
+      duration: 0.25,
       ease: 'power2.out',
-      stagger: 0.08,
+      stagger: 0.06,
+      overwrite: true,
       clearProps: 'transform,opacity,visibility',
     });
   }
@@ -34,7 +35,7 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
         {
           y: 0,
           autoAlpha: 1,
-          duration: 0.4,
+          duration: 0.25,
           ease: 'power2.out',
           stagger: 0.06,
           overwrite: true,
@@ -93,9 +94,9 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   const media = document.querySelector('[data-hero-media]');
   if (media) {
     gsap.from(media, {
-      scale: 1.06,
+      scale: 1.03,
       autoAlpha: 0,
-      duration: 0.6,
+      duration: 0.45,
       ease: 'power2.out',
       clearProps: 'transform,opacity,visibility',
     });
