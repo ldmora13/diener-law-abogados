@@ -1,4 +1,6 @@
 ---
+import { WHATSAPP_HREF } from '../data/site.ts';
+
 interface Props {
   variant?: 'primary' | 'secondary' | 'secondary-dark';
   href?: string;
@@ -16,9 +18,9 @@ const classes =
       <slot />
     </a>
   ) : openCita ? (
-    <button type="button" data-open-cita class={classes}>
+    <a href={WHATSAPP_HREF} class={classes}>
       <slot />
-    </button>
+    </a>
   ) : (
     <button type={type} class={classes}>
       <slot />

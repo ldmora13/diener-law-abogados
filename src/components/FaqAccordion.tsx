@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { ui, type Lang } from '../data/i18n.ts';
+import { WHATSAPP_HREF } from '../data/site.ts';
 
 interface Item { tema: string; pregunta: string; respuesta: string; }
 
-export default function FaqAccordion({ items, lang = 'es', citaHref = '#contacto' }: { items: Item[]; lang?: Lang; citaHref?: string }) {
+export default function FaqAccordion({ items, lang = 'es', citaHref = WHATSAPP_HREF }: { items: Item[]; lang?: Lang; citaHref?: string }) {
   const t = ui[lang].faq;
   const [open, setOpen] = useState<number | null>(0);
   return (
@@ -40,7 +41,7 @@ export default function FaqAccordion({ items, lang = 'es', citaHref = '#contacto
         );
       })}
       <p className="text-center mt-8 font-body text-[16px]">
-        {t.notFound} <a href={citaHref} data-open-cita className="font-bold text-authority-blue underline decoration-verdict-gold decoration-2 underline-offset-4">{t.talk}</a>
+        {t.notFound} <a href={citaHref} className="font-bold text-authority-blue underline decoration-verdict-gold decoration-2 underline-offset-4">{t.talk}</a>
       </p>
     </div>
   );

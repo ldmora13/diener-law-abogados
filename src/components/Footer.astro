@@ -1,5 +1,6 @@
 ---
 import { ui, type Lang } from '../data/i18n.ts';
+import { WHATSAPP_HREF } from '../data/site.ts';
 
 interface Props {
   lang?: Lang;
@@ -45,9 +46,9 @@ const oficinas = [
     </div>
     <div>
       <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.contact}</p>
-       <a href="https://wa.me/18632271367">+1 (863) 227-1367</a>
+       <a href={WHATSAPP_HREF}>+1 (863) 227-1367</a>
       <p class="mt-4 font-body text-[16px] text-paper/80">{t.contactText}<br />{lang === 'es' ? 'Lun–Vie 9:00–18:00' : 'Mon–Fri 9:00 AM–6:00 PM'}</p>
-      <button type="button" data-open-cita class="link-arrow !text-verdict-gold mt-4 cursor-pointer">{t.schedule} <span aria-hidden="true">→</span></button>
+      <a href={WHATSAPP_HREF} class="link-arrow !text-verdict-gold mt-4 inline-block">{t.schedule} <span aria-hidden="true">→</span></a>
     </div>
   </div>
   <p class="text-center text-xs text-paper/80 pb-5">© 2026 Diener Law, PA. All rights reserved. DIENER LAW™ is a service mark of Diener Law, PA. <a href={lang === 'es' ? '/privacidad' : '/en/privacy'} class="underline underline-offset-4">{t.privacyLink}</a></p>

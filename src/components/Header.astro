@@ -1,5 +1,6 @@
 ---
 import { ui, type Lang } from '../data/i18n.ts';
+import { WHATSAPP_HREF } from '../data/site.ts';
 
 interface Props {
   lang?: Lang;
@@ -13,7 +14,7 @@ const nav = [
   { href: `${base}#servicios`, label: t.nav.immigration },
   { href: `${base}#por-que`, label: t.nav.why },
   { href: `${base}#proceso`, label: t.nav.learn },
-  { href: `${base}#contacto`, label: t.nav.contact, modal: true },
+  { href: WHATSAPP_HREF, label: t.nav.contact },
   { href: `${base === '/' ? '' : base}/about-us`, label: t.nav.about }
 ];
 const toggleLabel = lang === 'es' ? 'EN' : 'ES';
@@ -27,7 +28,6 @@ const toggleLabel = lang === 'es' ? 'EN' : 'ES';
       {nav.map((item, i) => (
         <a
           href={item.href}
-          data-open-cita={'modal' in item && item.modal ? '' : undefined}
           aria-current={i === 0 ? 'page' : undefined}
           class={`font-body text-[13px] font-semibold text-paper min-h-[44px] inline-flex items-center border-b-[3px] ${i === 0 ? 'border-verdict-gold' : 'border-transparent hover:border-paper/40'}`}
         >
@@ -47,7 +47,7 @@ const toggleLabel = lang === 'es' ? 'EN' : 'ES';
     <div class="overflow-hidden">
     <nav class="flex flex-col px-6 pb-8" aria-label={lang === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
       {nav.map((item, i) => (
-        <a href={item.href} data-open-cita={'modal' in item && item.modal ? '' : undefined} class={`font-body text-[16px] font-semibold text-paper py-3 min-h-[44px] border-b border-white/10 ${i === 0 ? 'underline decoration-verdict-gold decoration-[3px] underline-offset-8' : ''}`}>{item.label}</a>
+        <a href={item.href} class={`font-body text-[16px] font-semibold text-paper py-3 min-h-[44px] border-b border-white/10 ${i === 0 ? 'underline decoration-verdict-gold decoration-[3px] underline-offset-8' : ''}`}>{item.label}</a>
       ))}
       <a href="https://wa.me/18632271367" class="btn-primary mt-6 text-center">{t.callNow}</a>
     </nav>
