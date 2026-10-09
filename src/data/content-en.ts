@@ -9,19 +9,19 @@ export const serviciosEn = [
 
 export const abogadosEn = [
   {
-    nombre: 'Richard “Bert” Diener', cargo: 'Founder · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'More than 20 years guiding families through family petitions, naturalization, and defense.',
-    credenciales: ['University of North Carolina at Chapel Hill', 'UNC National Trial Team member'], destacado: true,
+    nombre: 'Christine Meredith Lester', cargo: 'Senior associate · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'Specialist in immigration law, bonds, and court litigation.',
+    credenciales: ['California School of Law attorney'],
   },
   {
-    nombre: 'Elaine Hartman', cargo: 'Senior associate · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Focused on work visas and adjustment of status. Explains every form in plain language.',
-    credenciales: ['University of North Carolina at Chapel Hill', 'North Carolina Review editor'],
+    nombre: 'Carlos Alberto Mejia', cargo: 'Senior associate · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'Specialist in immigration law, bonds, and court litigation, also licensed in California, Arizona, and Texas.',
+    credenciales: ['California School of Law graduate.', 'Golden Key National Honor Society member'],
   },
   {
-    nombre: 'Russell Johnson', cargo: 'Senior associate · Personal Injury Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
-    bio: 'Board Certified Specialist in North Carolina Workers’ Compensation Law, also licensed in California, Arizona, and Texas.',
-    credenciales: ['Executive Editor, First Amendment Law Review', 'Golden Key National Honor Society member'],
+    nombre: 'Italia M. Lima', cargo: 'Senior associate · Attorney', idiomas: ['ESPAÑOL', 'ENGLISH'],
+    bio: 'Specialist in immigration law, bonds, and court litigation.',
+    credenciales: ['California School of Law graduate'],
   },
 ];
 
