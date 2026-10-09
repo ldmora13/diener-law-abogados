@@ -135,34 +135,10 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   }
 });
 
-// Header autohide + scrollspy: funcional, corre siempre.
-// El ocultado se desactiva con reduced-motion (queda fijo).
+// Header fijo + scrollspy: funcional, corre siempre.
 (function headerBehavior() {
   const header = document.getElementById('site-header');
-  const menuBtn = document.getElementById('menu-btn');
   if (!header) return;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let lastY = window.scrollY;
-  let ticking = false;
-
-  const onScroll = () => {
-    const y = window.scrollY;
-    const menuOpen = menuBtn?.getAttribute('aria-expanded') === 'true';
-    if (!reduceMotion && !menuOpen) {
-      const hide = y > 240 && y > lastY;
-      header.classList.toggle('site-header--hidden', hide);
-    } else {
-      header.classList.remove('site-header--hidden');
-    }
-    lastY = y;
-    ticking = false;
-  };
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(onScroll);
-      ticking = true;
-    }
-  }, { passive: true });
 
   // Scrollspy: subraya en dorado la sección visible (desktop y móvil).
   const links = Array.from(

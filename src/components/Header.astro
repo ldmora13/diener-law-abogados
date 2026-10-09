@@ -34,7 +34,7 @@ const toggleLabel = lang === 'es' ? 'EN' : 'ES';
           {item.label}
         </a>
       ))}
-      <a href="tel:+18885741286" class="font-heading text-[16px] text-paper border hover:bg-verdict-gold hover:text-counsel-navy border-verdict-gold px-4 py-2 min-h-[44px] inline-flex items-center transition-[background-color,color] duration-200 ease-out">{t.call}</a>
+      <a href="https://wa.me/18632271367" class="font-heading text-[16px] text-paper border hover:bg-verdict-gold hover:text-counsel-navy border-verdict-gold px-4 py-2 min-h-[44px] inline-flex items-center transition-[background-color,color] duration-200 ease-out">{t.call}</a>
     </nav>
     <div class="flex items-center gap-2">
       <a href={switchHref} data-lang-switch hreflang={lang === 'es' ? 'en' : 'es'} lang={lang === 'es' ? 'en' : 'es'} class="text-paper/80 font-body text-[13px] font-semibold min-w-[44px] min-h-[44px] inline-flex items-center justify-center underline decoration-verdict-gold decoration-2 underline-offset-4">{toggleLabel}</a>
@@ -49,7 +49,7 @@ const toggleLabel = lang === 'es' ? 'EN' : 'ES';
       {nav.map((item, i) => (
         <a href={item.href} data-open-cita={'modal' in item && item.modal ? '' : undefined} class={`font-body text-[16px] font-semibold text-paper py-3 min-h-[44px] border-b border-white/10 ${i === 0 ? 'underline decoration-verdict-gold decoration-[3px] underline-offset-8' : ''}`}>{item.label}</a>
       ))}
-      <a href="tel:+18885741286" class="btn-primary mt-6 text-center">{t.callNow}</a>
+      <a href="https://wa.me/18632271367" class="btn-primary mt-6 text-center">{t.callNow}</a>
     </nav>
     </div>
   </div>

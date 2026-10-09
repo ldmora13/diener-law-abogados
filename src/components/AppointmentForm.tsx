@@ -120,7 +120,7 @@ export default function AppointmentForm({ lang = 'es', revealed = true, onDone }
       </F>
       {urgencia === t.urgencyOpts[2] && (
         <div className="md:col-span-2 bg-sky-mist border-l-4 border-authority-blue rounded-[4px] px-4 py-3">
-          <p className="font-body text-[14px] font-semibold text-authority-blue">{t.urgencyHelp} <a href="tel:+18885741286" className="underline underline-offset-4">+1 (863) 227-1367</a></p>
+          <p className="font-body text-[14px] font-semibold text-authority-blue">{t.urgencyHelp} <a href="https://wa.me/18632271367" className="underline underline-offset-4">+1 (863) 227-1367</a></p>
         </div>
       )}
       <F i={8} on={revealed}>

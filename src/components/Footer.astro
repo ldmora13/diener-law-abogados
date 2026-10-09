@@ -39,13 +39,13 @@ const oficinas = [
       <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.offices}</p>
       <ul class="mt-4 space-y-3 font-body text-[16px] text-paper/80">
         {oficinas.map((o) => (
-          <li><strong class="text-paper">{o.estado}</strong><br />{o.dir}<br /><a class="underline underline-offset-4" href={`tel:+1${o.tel.replace(/\D/g, '')}`}>{o.tel}</a></li>
+          <li><strong class="text-paper">{o.estado}</strong><br />{o.dir}<br /><a class="underline underline-offset-4" href={`https://wa.me/1${o.tel.replace(/\D/g, '')}`}>{o.tel}</a></li>
         ))}
       </ul>
     </div>
     <div>
       <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.contact}</p>
-       <a href="tel:+18885741286">+1 (863) 227-1367</a>
+       <a href="https://wa.me/18632271367">+1 (863) 227-1367</a>
       <p class="mt-4 font-body text-[16px] text-paper/80">{t.contactText}<br />{lang === 'es' ? 'Lun–Vie 9:00–18:00' : 'Mon–Fri 9:00 AM–6:00 PM'}</p>
       <button type="button" data-open-cita class="link-arrow !text-verdict-gold mt-4 cursor-pointer">{t.schedule} <span aria-hidden="true">→</span></button>
     </div>

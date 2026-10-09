@@ -165,10 +165,6 @@ body {
   object-fit: contain;
 }
 
-/* Header autohide — solo transform, 300ms */
-.site-header { transition: transform 300ms ease-out; }
-.site-header--hidden { transform: translateY(-100%); }
-
 /* Selección dorada — único acento cálido también al seleccionar */
 ::selection { background: var(--color-verdict-gold); color: var(--color-counsel-navy); }
 
