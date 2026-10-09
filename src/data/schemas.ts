@@ -1,5 +1,5 @@
 // Constructores JSON-LD (SEO + GEO: los LLMs también consumen estos datos).
-import { SITE_URL, PHONE_HREF, OFFICES } from './site.ts';
+import { SITE_URL, PHONE_HREF, OFFICES, SOCIALS } from './site.ts';
 
 export function attorneySchema() {
   return {
@@ -11,6 +11,7 @@ export function attorneySchema() {
     image: `${SITE_URL}/logo-white.webp`,
     logo: `${SITE_URL}/logo-white.webp`,
     telephone: PHONE_HREF.replace('tel:', ''),
+    sameAs: SOCIALS,
     description:
       'Despacho de abogados de inmigración en Carolina del Norte, California, Arizona y Texas. Visas familiares, de trabajo y de estudiante, ciudadanía, green card y defensa de deportación. Se habla español.',
     areaServed: OFFICES.map((o) => ({ '@type': 'State', name: o.region })),
