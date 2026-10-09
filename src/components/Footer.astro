@@ -39,7 +39,7 @@ const oficinas = [
       <p class="font-heading text-[18px] text-verdict-gold uppercase">{t.offices}</p>
       <ul class="mt-4 space-y-3 font-body text-[16px] text-paper/80">
         {oficinas.map((o) => (
-          <li><strong class="text-paper">{o.estado}</strong><br />{o.dir}<br /><a class="underline underline-offset-4" href={`https://wa.me/1${o.tel.replace(/\D/g, '')}`}>{o.tel}</a></li>
+          <li><strong class="text-paper">{o.estado}</strong><br />{o.dir}<br /></li>
         ))}
       </ul>
     </div>
