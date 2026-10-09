@@ -29,6 +29,7 @@ const {
   noindex = false,
 } = Astro.props;
 ---
+
 <!doctype html>
 <html lang={lang}>
   <head>
@@ -36,6 +37,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <Seo title={title} description={description} lang={lang} path={path} altEs={altEs} altEn={altEn} schemas={[attorneySchema(), websiteSchema(lang), ...schemas]} noindex={noindex} />
+    {import.meta.env.PROD && (
+      <>
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-NNSQJB5LPZ"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NNSQJB5LPZ');
+        </script>
+      </>
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
