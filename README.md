@@ -52,7 +52,7 @@ src/
 - **Modal de citas**: cualquier botón/enlace con `data-open-cita` (o prop `openCita` en `Button.astro`) abre `CitaModal`. No existen secciones `#cita`: no crear anclas a ellas.
 - **React solo como isla**: formularios, FAQ, chat y modal usan `client:load`/`client:visible`; el resto es Astro estático prerenderizado.
 - **Estética institucional** (`DESIGN.md` en `.agents/`): navy `#1f3461` + dorado `#fdd04b` (un solo CTA dorado por vista), Oswald/Open Sans, sin sombras ni píldoras, transiciones ≤200 ms, `prefers-reduced-motion` respetado.
-- **Decisiones**: desviaciones y supuestos se registran en `.agents/DECISIONS.md` (p. ej. dominio provisional `https://www.dienerlaw.com` en `astro.config.mjs` y `site.ts`: reemplazar al publicar).
+- **Decisiones**: desviaciones y supuestos se registran en `.agents/DECISIONS.md` (p. ej. dominio provisional `https://dienerlawabogados.com` en `astro.config.mjs` y `site.ts`: reemplazar al publicar).
 
 ## Documentación del proyecto
 

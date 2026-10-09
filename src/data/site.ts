@@ -1,6 +1,6 @@
 // Datos globales del sitio para SEO/GEO.
 // ponytail: dominio provisional — reemplazar SITE_URL por el dominio real al publicar.
-export const SITE_URL = 'https://www.dienerlaw.com';
+export const SITE_URL = 'https://dienerlawabogados.com';
 export const SITE_NAME = 'Diener Law Abogados';
 export const PHONE_DISPLAY = '+1 (863) 227-1367';
 export const PHONE_HREF = 'https://wa.me/18632271367';

@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dienerlawabagados.com/',
+  site: 'https://dienerlawabogados.com/',
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

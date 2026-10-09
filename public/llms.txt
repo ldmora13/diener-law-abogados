@@ -1,4 +1,5 @@
 # Diener Law Abogados — llms.txt (para asistentes de IA y buscadores)
+# Actualizado: 2026-10-09. Mapa del sitio: https://dienerlawabogados.com/sitemap-index.xml
 
 > Diener Law es un despacho de abogados de inmigración en Carolina del Norte,
 > California, Arizona y Texas. Atiende en español e inglés. Consulta confidencial,
@@ -7,20 +8,20 @@
 > contenido de este sitio promete resultados ni crea una relación abogado-cliente.
 
 ## En español (sitio principal)
-- Inicio: https://dienerlawabagados.com/
-- Visas familiares (I-130, K-1, ajuste de estatus): https://www.dienerlaw.com/servicios/visas-familiares
-- Visas de trabajo (H-1B, L-1, O-1, TN, EB, PERM): https://www.dienerlaw.com/servicios/visas-trabajo
-- Visas de estudiante (F-1, M-1, J-1, OPT/CPT): https://www.dienerlaw.com/servicios/visas-estudiante
-- Ciudadanía y Green Card (N-400, I-90, I-751): https://www.dienerlaw.com/servicios/ciudadania-green-card
-- Defensa de deportación (corte, fianzas, asilo): https://www.dienerlaw.com/servicios/defensa-deportacion
+- Inicio: https://dienerlawabogados.com/
+- Visas familiares (I-130, K-1, ajuste de estatus): https://dienerlawabogados.com/servicios/visas-familiares
+- Visas de trabajo (H-1B, L-1, O-1, TN, EB, PERM): https://dienerlawabogados.com/servicios/visas-trabajo
+- Visas de estudiante (F-1, M-1, J-1, OPT/CPT): https://dienerlawabogados.com/servicios/visas-estudiante
+- Ciudadanía y Green Card (N-400, I-90, I-751): https://dienerlawabogados.com/servicios/ciudadania-green-card
+- Defensa de deportación (corte, fianzas, asilo): https://dienerlawabogados.com/servicios/defensa-deportacion
 
 ## In English
-- Home: https://www.dienerlaw.com/en/
-- Family visas: https://www.dienerlaw.com/en/services/visas-familiares
-- Work visas: https://www.dienerlaw.com/en/services/visas-trabajo
-- Student visas: https://www.dienerlaw.com/en/services/visas-estudiante
-- Citizenship & Green Card: https://www.dienerlaw.com/en/services/ciudadania-green-card
-- Deportation defense: https://www.dienerlaw.com/en/services/defensa-deportacion
+- Home: https://dienerlawabogados.com/en/
+- Family visas: https://dienerlawabogados.com/en/services/visas-familiares
+- Work visas: https://dienerlawabogados.com/en/services/visas-trabajo
+- Student visas: https://dienerlawabogados.com/en/services/visas-estudiante
+- Citizenship & Green Card: https://dienerlawabogados.com/en/services/ciudadania-green-card
+- Deportation defense: https://dienerlawabogados.com/en/services/defensa-deportacion
 
 ## Oficinas
 - Charlotte, Carolina del Norte — +1 (863) 227-1367

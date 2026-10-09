@@ -26,7 +26,7 @@ Workflows: browse service pages (ES `/servicios/[slug]`, EN `/en/services/[slug]
 
 Confirmed: mirrored ES/EN routes with `lang`/`hreflang`/`switchHref`; all UI text in `src/data/i18n.ts`; appointment modal global with focus trap, Escape, scroll-lock; SEO (sitemap, canonical, JSON-LD Attorney/WebSite/FAQPage/BreadcrumbList) + GEO (`robots.txt`, `public/llms.txt`); no `#cita` anchors (removed, modal only); React only as islands (`client:load`/`client:visible`).
 
-Undecided / open: user flagged "Hay cambios" in durable constraints/assets but did not specify what changes — pending detail on real domain, photo assets, or legal copy. Until specified, preserve current provisional domain `https://www.dienerlaw.com`, consent-only photos (real portraits only for Bert/Elaine/Russell, initials fallback), and existing attorney-client advertising disclaimers.
+Undecided / open: user flagged "Hay cambios" in durable constraints/assets but did not specify what changes — pending detail on real domain, photo assets, or legal copy. Until specified, preserve current provisional domain `https://dienerlawabogados.com`, consent-only photos (real portraits only for Bert/Elaine/Russell, initials fallback), and existing attorney-client advertising disclaimers.
 
 ## Brand Commitments
 

@@ -8,6 +8,8 @@ export function attorneySchema() {
     '@id': `${SITE_URL}/#despacho`,
     name: 'Diener Law Abogados',
     url: SITE_URL,
+    image: `${SITE_URL}/logo-white.webp`,
+    logo: `${SITE_URL}/logo-white.webp`,
     telephone: PHONE_HREF.replace('tel:', ''),
     description:
       'Despacho de abogados de inmigración en Carolina del Norte, California, Arizona y Texas. Visas familiares, de trabajo y de estudiante, ciudadanía, green card y defensa de deportación. Se habla español.',

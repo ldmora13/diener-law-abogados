@@ -10,13 +10,16 @@ interface Props {
   altEs?: string;
   altEn?: string;
   schemas?: unknown[];
+  noindex?: boolean;
 }
-const { title, description, lang = 'es', path = '/', altEs = '/', altEn = '/en/', schemas = [] } = Astro.props;
+const { title, description, lang = 'es', path = '/', altEs = '/', altEn = '/en/', schemas = [], noindex = false } = Astro.props;
 const canonical = `${SITE_URL}${path}`;
 const locale = lang === 'es' ? 'es_ES' : 'en_US';
 const localeAlt = lang === 'es' ? 'en_US' : 'es_ES';
+const ogImage = `${SITE_URL}/logo-white.webp`;
 ---
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex" />}
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#1f3461" />
 <meta name="geo.region" content="US-NC" />
@@ -30,9 +33,12 @@ const localeAlt = lang === 'es' ? 'en_US' : 'es_ES';
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={SITE_NAME} />
 <meta property="og:locale" content={locale} />
 <meta property="og:locale:alternate" content={localeAlt} />
 <meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content={ogImage} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <title>{title}</title>
